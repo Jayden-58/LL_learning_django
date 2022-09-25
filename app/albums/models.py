@@ -1,5 +1,4 @@
 from platform import release
-from tkinter import CASCADE
 from django.db import models
 
 class Publisher(models.Model):
@@ -18,11 +17,11 @@ class Album(models.Model):
     country_of_pressing = models.CharField(max_length=40, blank=True)
     submission_date = models.DateTimeField()
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
-    publisher = models.ForeignKey(Publisher, on_delete=CASCADE)
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
 
 class Song(models.Model):
     title = models.CharField(max_length=15)
-    length = models.CharField(max_length=15, blank=True) #maybe try duration field instead?
+    length = models.CharField(max_length=15, blank=True) #maybe later I'll try duration field instead?
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     
