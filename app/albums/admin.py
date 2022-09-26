@@ -1,4 +1,3 @@
-from unicodedata import name
 from django.contrib import admin
 from .models import Publisher, Artist, Album, Song
 # Register your models here.
