@@ -19,9 +19,8 @@ class Artist(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=100)
     matrix = models.CharField(max_length=20, blank=True)
-    release_date = models.DateField(blank=True, null=True)
+    release_date = models.CharField(max_length=4,blank=True, null=True)
     country_of_pressing = models.CharField(max_length=40, blank=True)
-    submission_date = models.DateTimeField(blank=True, null=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
 
