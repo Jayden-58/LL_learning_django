@@ -20,7 +20,21 @@ from albums import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+
+    #publisher urls
+    path('publishers/<int:publisher_id>/', views.publisher_detail, name='publisher_detail'),
+    path('publishers/all', views.all_publishers, name='all_publishers'),
+
+    #artist urls
+    path('artists/<int:artist_id>/', views.artist_detail, name='artist_detail'),
+    path('artists/all', views.all_artists, name='all_artists'),
+
+    #album urls
     path('albums/<int:album_id>/', views.album_detail, name='albums_detail'),
     path('albums/all', views.all_albums, name='all_albums'),
+
+
+
+
     #add more later
 ]
