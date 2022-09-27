@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
-from .models import Album, Publisher, Artist
+from .models import Album, Publisher, Artist, Song
 # Create your views here.
 def home(request):
     #return HttpResponse('<p>home veiw</p>')
@@ -61,4 +61,22 @@ def album_detail(request, album_id):
         raise Http404('Album not Found')
     return render(request, 'album_detail.html', {
         'album': album,
+    })
+
+def song_all(request):
+    try:
+        song = Song.objects.all()
+    except Song.DoesNotExist:
+        raise Http404('Song not found')
+    return render(request, 'song_all.html', {
+        'song': song
+    })
+
+def song_detail(request, song_id):
+    try:
+        song = Song.objects.get(id=song_id)
+    except Song.DoesNotExist:
+        raise Http404('Song not found')
+    return render(request, 'song_detail.html', {
+        'song': song
     })
