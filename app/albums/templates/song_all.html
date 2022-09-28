@@ -7,7 +7,7 @@
         <h1>All Songs</h1>
 
         {% for song in songs %}
-            <li>{{ song.title }} -- {{song.artist}} -- {{song.album}} -- {{song.length}} -- {{song.album.release_date}}</li>
+            <li> <a href = "{% url 'song_detail' song.id %}">{{ song.title }}</a> -- <a href = "{% url 'artist_detail' song.artist.id%}">{{song.artist}}</a> -- <a href = "{% url 'albums_detail' song.artist.id %}">{{song.album}}</a> -- {{song.length}} -- {{song.album.release_date}}</li>
         {% endfor %}
     </body>
 </html>
