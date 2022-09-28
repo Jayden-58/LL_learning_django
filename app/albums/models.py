@@ -25,7 +25,7 @@ class Album(models.Model):
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.title} --- {self.artist}' #{self.matrix} {self.release_date} {self.country_of_pressing} {self.publisher}'
+        return f'{self.title}'# --- {self.artist}' #{self.matrix} {self.release_date} {self.country_of_pressing} {self.publisher}'
 
 class Song(models.Model):
     title = models.CharField(max_length=40)
