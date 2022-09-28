@@ -6,11 +6,15 @@
     <body>
         <h1>Album Details</h1>
         <h2>{{album.title}}</h2>
-        <p>Publisher: {{album.publisher}}</p>
-        <h2>songs:</h2>
+        <h2>Release Date: </h2>
+        <p>{{album.release_date}}</p>
+        <h2>Publisher: </h2>
+        <a href = "{% url 'publisher_detail' album.publisher.id %}">{{album.publisher}}</a>
+        <h2>Songs:</h2>
         {% for song in songs %}
             {% if album.id == song.album.id %}
-                <p>{{song.title}}</p>
+                <a href = "{% url 'song_detail' song.id %}">{{song.title}}</a>
+                <br>
             {% endif %}
         {% endfor %}
     </body>

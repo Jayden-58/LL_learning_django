@@ -58,11 +58,13 @@ def album_detail(request, album_id):
     try:
         album = Album.objects.get(id=album_id)
         songs = Song.objects.all
+        publisher = Publisher.objects.all()
     except Album.DoesNotExist:
         raise Http404('Album not Found')
     return render(request, 'album_detail.html', {
         'album': album,
         'songs': songs,
+        'publisher': publisher,
     })
 
 def song_all(request):
