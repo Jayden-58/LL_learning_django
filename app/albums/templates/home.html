@@ -7,14 +7,13 @@
         <h1>Homepage</h1>
         <section id = "homepage-links"> 
             <!--Right now, This is local hist, I'll have to change this later :)-->
-            <a href = "http://localhost:8000/albums/all">All Albums</a>
+            <a href = "{% url 'all_albums' %}">All Albums</a>
             <br>
-            <a href = "http://localhost:8000/artists/all">All Artists</a>
+            <a href = "{% url 'all_artists' %}">All Artists</a>
             <br>
-            <a href = "http://localhost:8000/publishers/all">All Publishers</a>
+            <a href = "{% url 'all_publishers' %}">All Publishers</a>
             <br>
-            <a href = "http://localhost:8000/songs/all">All Songs</a>
-            <br>
+            <a href ="{% url 'all_songs'%}">All Songs</a>
         </section>
         
         
