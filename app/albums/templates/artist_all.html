@@ -6,7 +6,7 @@
     <body>
         <h1>All Artists</h1>
         {% for artist in artists %}
-            <li>{{artist.first_name}}</li>
+            <li><a href = "{% url 'artist_detail' artist.id %}">{{artist.first_name}}</a></li>
         {% endfor %}
     </body>
 </html>
