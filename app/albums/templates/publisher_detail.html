@@ -5,6 +5,12 @@
     </head>
     <body>
         <h1>Publisher Details</h1>
-        <p>{{publisher}}</p>
+        <p>{{publisher.name}}</p>
+        <h2>Albums: </h2>
+        {% for album in albums %}
+            {% if publisher.id == album.publisher.id %}
+                <a href = "{% url 'albums_detail' album.id%}">{{album.title}}</a>
+            {% endif %}
+        {% endfor %}
     </body>
 </html>
