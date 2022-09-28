@@ -20,11 +20,13 @@ def publisher_detail(request, publisher_id):
     try:
         publisher = Publisher.objects.get(id=publisher_id)
         albums = Album.objects.all()
+        songs = Song.objects.all()
     except Publisher.DoesNotExist:
         raise Http404('Publisher does not exist')
     return render(request, 'publisher_detail.html', {
         'publisher': publisher,
-        'albums': albums
+        'albums': albums,
+        'songs': songs,
     })
 
 def all_artists(request):
@@ -40,7 +42,7 @@ def artist_detail(request, artist_id):
     try:
         artist = Artist.objects.get(id=artist_id)
         albums = Album.objects.all()
-        songs = Song.objects.all
+        songs = Song.objects.all()
     except Artist.DoesNotExist:
         raise Http404('Artist not found')
     return render(request, 'artist_detail.html', {
