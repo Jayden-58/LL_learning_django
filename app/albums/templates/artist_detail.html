@@ -6,5 +6,11 @@
     <body>
         <h1>Artist Details</h1>
         <p>{{artist}}</p>
+        <h2>Albums: </h2>
+        {% for album in albums %}
+            {% if artist.id == album.artist.id %}
+                <a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a>
+            {% endif %}
+        {% endfor %}
     </body>
 </html>
