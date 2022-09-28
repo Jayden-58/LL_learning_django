@@ -10,6 +10,14 @@
         {% for album in albums %}
             {% if artist.id == album.artist.id %}
                 <a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a>
+                <br>
+            {% endif %}
+        {% endfor %}
+        <h2>Songs: </h2>
+        {% for song in songs %}
+            {% if artist.id == song.artist.id %}
+            <a href = "{% url 'song_detail' song.id %}">{{song.title}}</a>
+            <br>
             {% endif %}
         {% endfor %}
     </body>

@@ -38,11 +38,13 @@ def artist_detail(request, artist_id):
     try:
         artist = Artist.objects.get(id=artist_id)
         albums = Album.objects.all()
+        songs = Song.objects.all
     except Artist.DoesNotExist:
         raise Http404('Artist not found')
     return render(request, 'artist_detail.html', {
         'artist': artist,
         'albums': albums,
+        'songs' : songs,
     })
 
 def all_albums(request):
