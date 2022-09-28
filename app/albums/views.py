@@ -9,11 +9,11 @@ def home(request):
 
 def all_publishers(request):
     try:
-        publisher = Publisher.objects.all()
+        publishers = Publisher.objects.all()
     except Publisher.DoesNotExist:
         raise Http404('Publisher not found')
     return render(request, 'publisher_all.html',{
-        'publisher': publisher
+        'publishers': publishers
     })
 
 def publisher_detail(request, publisher_id):
@@ -27,11 +27,11 @@ def publisher_detail(request, publisher_id):
 
 def all_artists(request):
     try:
-        artist = Artist.objects.all()
+        artists = Artist.objects.all()
     except Artist.DoesNotExist:
         raise Http404('Artist not found')
     return render(request, 'artist_all.html', {
-        'artist': artist,
+        'artists': artists,
     })
 
 def artist_detail(request, artist_id):
@@ -46,11 +46,11 @@ def artist_detail(request, artist_id):
 def all_albums(request):
 
     try:
-        album = Album.objects.all()
+        albums = Album.objects.all()
     except Album.DoesNotExist:
         raise Http404('Album not Found')
     return render(request, 'all_albums.html', {
-        'album': album,
+        'albums': albums,
     })
 
 

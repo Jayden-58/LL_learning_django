@@ -6,6 +6,8 @@
     <body>
         <h1>All Albums</h1>
 
-        <p>{{album}}</p>
+        {% for album in albums %}
+        <li>{{album.title}} -- {{album.artist}} -- {{album.release_date}} -- {{album.publisher}}</li>
+        {% endfor %}
     </body>
 </html>

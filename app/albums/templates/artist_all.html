@@ -5,6 +5,8 @@
     </head>
     <body>
         <h1>All Artists</h1>
-        <p>{{artist}}</p>
+        {% for artist in artists %}
+            <li>{{artist.first_name}}</li>
+        {% endfor %}
     </body>
 </html>

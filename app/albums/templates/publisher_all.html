@@ -5,6 +5,8 @@
     </head>
     <body>
         <h1>All Publishers</h1>
-        <p>{{publisher}}</p>
+        {% for publisher in publishers %}
+            <li>{{publisher.name}} -- {{publisher.date_founded}}</li>
+        {% endfor %}
     </body>
 </html>
