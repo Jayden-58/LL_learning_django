@@ -7,7 +7,7 @@
         <h1>All Albums</h1>
 
         {% for album in albums %}
-        <li>{{album.title}} -- {{album.artist}} -- {{album.release_date}} -- {{album.publisher}}</li>
+        <li><a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a> -- {{album.artist}} -- {{album.release_date}} -- {{album.publisher}}</li>
         {% endfor %}
     </body>
 </html>
