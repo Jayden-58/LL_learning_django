@@ -7,18 +7,39 @@
         <h1>Publisher Details</h1>
         <p>{{publisher.name}}</p>
         <h2>Albums: </h2>
-        {% for album in albums %}
-            {% if publisher.id == album.publisher.id %}
-                <a href = "{% url 'albums_detail' album.id%}">{{album.title}}</a>
-                <br>
-            {% endif %}
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Album</th>
+                <th>Artist</th>
+                <th>Released</th>
+            </tr>
+
+            {% for album in albums %}
+                    <tr>
+                {% if publisher.id == album.publisher.id %}
+                    <td><a href = "{% url 'albums_detail' album.id%}">{{album.title}}</a></td>
+                    <td><a href = "{% url 'artist_detail' album.artist.id%}">{{album.artist}}</a></td>
+                    <td>{{album.release_date}}</td>
+                    <br>
+                {% endif %}
+            {% endfor %}
+                    </tr>
+        </table>
+        
         <h2>Songs: </h2>
-        {% for song in songs %}
-            {% if publisher.id == song.album.publisher.id %}
-                <a href = "{% url 'song_detail' song.id%}">{{song.title}}</a>
-                <br>
-            {% endif %}
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Song</th>
+                <th>Artist</th>
+            </tr>
+            {% for song in songs %}
+                {% if publisher.id == song.album.publisher.id %}
+                <tr>
+                    <td><a href = "{% url 'song_detail' song.id%}">{{song.title}}</a></td>
+                    <td><a href = "{% url 'artist_detail' song.artist.id %}"></a>{{song.artist}}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+    </table>
     </body>
 </html>
