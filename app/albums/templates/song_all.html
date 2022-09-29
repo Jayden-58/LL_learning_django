@@ -5,9 +5,25 @@
     </head>
     <body>
         <h1>All Songs</h1>
+        <table>
 
-        {% for song in songs %}
-            <li> <a href = "{% url 'song_detail' song.id %}">{{ song.title }}</a> -- <a href = "{% url 'artist_detail' song.artist.id%}">{{song.artist}}</a> -- <a href = "{% url 'albums_detail' song.artist.id %}">{{song.album}}</a> -- {{song.length}} -- {{song.album.release_date}}</li>
-        {% endfor %}
+                <tr>
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Album</th>
+                    <th>Length</th>
+                    <th>Release date</th>
+                </tr>
+            {% for song in songs %}
+                <tr>
+                    <td><a href = "{% url 'song_detail' song.id %}">{{ song.title }}</a></td> 
+                    <td><a href = "{% url 'artist_detail' song.artist.id%}">{{song.artist}}</a></td>
+                    <td><a href = "{% url 'albums_detail' song.artist.id %}">{{song.album}}</a></td>
+                    <td>{{song.length}}</td>
+                    <td>{{song.album.release_date}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        
     </body>
 </html>
