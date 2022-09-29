@@ -11,11 +11,20 @@
         <h2>Publisher: </h2>
         <a href = "{% url 'publisher_detail' album.publisher.id %}">{{album.publisher}}</a>
         <h2>Songs:</h2>
-        {% for song in songs %}
-            {% if album.id == song.album.id %}
-                <a href = "{% url 'song_detail' song.id %}">{{song.title}}</a>
-                <br>
-            {% endif %}
-        {% endfor %}
+        <table>
+                    <tr>
+                        <th>Song</th>
+                        <th>Length</th>
+                    </tr>
+            {% for song in songs %}
+                {% if album.id == song.album.id %}
+                    <tr>
+                        <td><a href = "{% url 'song_detail' song.id %}">{{song.title}}</a></td>
+                        <td>{{song.length}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+        
     </body>
 </html>

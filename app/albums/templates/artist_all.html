@@ -5,8 +5,16 @@
     </head>
     <body>
         <h1>All Artists</h1>
-        {% for artist in artists %}
-            <li><a href = "{% url 'artist_detail' artist.id %}">{{artist.first_name}}</a></li>
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Artists</th>
+            </tr>
+            {% for artist in artists %}
+                <tr>
+                    <td><a href = "{% url 'artist_detail' artist.id %}">{{artist.first_name}} {{artist.last_name}}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        
     </body>
 </html>
