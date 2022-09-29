@@ -5,8 +5,17 @@
     </head>
     <body>
         <h1>All Publishers</h1>
-        {% for publisher in publishers %}
-            <li><a href = "{% url 'publisher_detail' publisher.id%}">{{publisher.name}}</a> -- {{publisher.date_founded}}</li>
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Date Founded</th>
+            </tr>
+            {% for publisher in publishers %}
+            <tr>
+                <td><a href = "{% url 'publisher_detail' publisher.id%}">{{publisher.name}}</a></td>
+                <td>{{publisher.date_founded}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </body>
 </html>

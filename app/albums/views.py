@@ -19,7 +19,7 @@ def all_publishers(request):
 def publisher_detail(request, publisher_id):
     try:
         publisher = Publisher.objects.get(id=publisher_id)
-        albums = Album.objects.all()
+        albums = Album.objects.all()#I'd like to fix this later (retrieveing 'all' instead of just what I need)
         songs = Song.objects.all()
     except Publisher.DoesNotExist:
         raise Http404('Publisher does not exist')
