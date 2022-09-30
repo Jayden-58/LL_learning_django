@@ -55,10 +55,12 @@ def all_albums(request):
 
     try:
         albums = Album.objects.all()
+        albums_length = len(Album.objects.all())
     except Album.DoesNotExist:
         raise Http404('Album not Found')
     return render(request, 'all_albums.html', {
         'albums': albums,
+        'albums_length': albums_length,
     })
 
 
