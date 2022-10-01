@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-
-    </head>
-    <body>
+{% extends "base.html" %}
+    {% block content %}
         <h1>Homepage</h1>
         <section id = "homepage-links"> 
             <a href = "{% url 'all_albums' %}">All Albums</a>
@@ -15,6 +11,4 @@
             <a href ="{% url 'all_songs'%}">All Songs</a>
         </section>
         
-        
-    </body>
-</html>
+    {% endblock %}

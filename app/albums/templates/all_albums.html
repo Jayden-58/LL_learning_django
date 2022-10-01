@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-
-    </head>
-    <body>
-        <header>
-            <a href = "{% url 'all_albums' %}">All Albums</a>
-            <a href = "{% url 'all_artists' %}">All Artists</a>
-            <a href = "{% url 'all_publishers' %}">All Publishers</a>
-            <a href ="{% url 'all_songs'%}">All Songs</a>
-        </header>
+{% extends "base.html" %}
+    {% block content %}
         <h1>All Albums</h1>
         <h2>Data Input Progress: {{albums_length}} / 231 Albums</h2>
         <table class = "album-table">
@@ -28,6 +18,4 @@
                 </tr>
             {% endfor %}
         </table>
-        
-    </body>
-</html>
+    {% endblock %}

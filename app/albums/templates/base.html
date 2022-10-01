@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <Link rel = "stylesheet" href = "{% static 'style.css' %}">
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'all_albums' %}">All Albums</a>
+        <a href="{% url 'all_artists' %}">All Artists</a>
+        <a href="{% url 'all_publishers' %}">All Publishers</a>
+        <a href="{% url 'all_songs'%}">All Songs</a>
+    </header>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>

@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-
-    </head>
-    <body>
-        <header>
-            <a href = "{% url 'all_albums' %}">All Albums</a>
-            <a href = "{% url 'all_artists' %}">All Artists</a>
-            <a href = "{% url 'all_publishers' %}">All Publishers</a>
-            <a href ="{% url 'all_songs'%}">All Songs</a>
-        </header>
+{% extends "base.html" %}
+    {% block content %}
         <h1>Song Details</h1>
         <p>{{song.title}}</p>
         <table class = "song-table">
@@ -28,6 +18,4 @@
                 <td>{{song.album.release_date}}</td>
             </tr>
         </table>
-
-    </body>
-</html>
+    {% endblock %}
