@@ -10,11 +10,13 @@
         <table>
             <tr>
                 <th>Title</th>
+                <th>Released</th>
             </tr>
             {% for album in albums %}
                 {% if artist.id == album.artist.id %}
                 <tr>
                     <td><a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a></td>
+                    <td>{{album.release_date}}</td>
                 </tr>
                 {% endif %}
             {% endfor %}
@@ -23,11 +25,17 @@
         <table>
                 <tr>
                     <th>Title</th>
+                    <th>Length</th>
+                    <th>Album</th>
+                    <th>Released</th>
                 </tr>
             {% for song in songs %}
                 {% if artist.id == song.artist.id %}
                 <tr>
                 <td><a href = "{% url 'song_detail' song.id %}">{{song.title}}</a></td>
+                <td>{{song.length}}</td>
+                <td><a href = "{% url 'albums_detail' song.album.id %}">{{song.album.title}}</a></td>
+                <td>{{song.album.release_date}}</td>
                 </tr>
                 {% endif %}
             {% endfor %}
