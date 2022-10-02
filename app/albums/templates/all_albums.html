@@ -14,7 +14,7 @@
             {% for album in albums %}
                 <tr>
                     <!--<td><img src = "{% static 'images/1.jpg' %}"></td>-->
-                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images' %}/{{album.id}}.jpg"></td>
+                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg"></td>
                     <td><a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a></td>
                     <td><a href = "{% url 'artist_detail' album.artist.id %}">{{album.artist}}</a></td> 
                     <td>{{album.release_date}}</td> 

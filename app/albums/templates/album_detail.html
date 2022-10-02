@@ -4,7 +4,7 @@
     {% block content %}
         <section class = "album-details">
             <h1>Album Details</h1>
-            <img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images' %}/{{album.id}}.jpg">
+            <img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg">
             <h2>{{album.title}}</h2>
             <h2>Release Date: </h2>
             <p>{{album.release_date}}</p>
