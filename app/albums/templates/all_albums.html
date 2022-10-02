@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
     {% block content %}
         <h1>All Albums</h1>
         <h2>Data Input Progress: {{albums_length}} / 231 Albums</h2>
         <table class = "album-table">
                 <tr>
+                    <th>Cover</th>
                     <th>Title</th>
                     <th>Artist</th>
                     <th>Release Date</th>
@@ -11,6 +13,7 @@
                 </tr>
             {% for album in albums %}
                 <tr>
+                    <td><img src = "{% static 'images/1.jpg'  %}"></td>
                     <td><a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a></td>
                     <td><a href = "{% url 'artist_detail' album.artist.id %}">{{album.artist}}</a></td> 
                     <td>{{album.release_date}}</td> 
