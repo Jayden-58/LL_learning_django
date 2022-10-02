@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
     {% block content %}
         <h1>Song Details</h1>
         <p>{{song.title}}</p>
         <table class = "song-table">
             <tr>
+                <th>Cover</th>
                 <th>Title</th>
                 <th>Artist</th>
                 <th>Album</th>
@@ -11,6 +13,7 @@
                 <th>Release date</th>
             </tr>
             <tr>
+                <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images' %}/{{song.album.id}}.jpg"></td>
                 <td><a href = "{% url 'song_detail' song.id %}">{{ song.title }}</a></td> 
                 <td><a href = "{% url 'artist_detail' song.artist.id%}">{{song.artist}}</a></td>
                 <td><a href = "{% url 'albums_detail' song.album.id %}">{{song.album}}</a></td>

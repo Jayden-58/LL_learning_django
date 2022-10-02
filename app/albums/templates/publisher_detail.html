@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
     {% block content %}
         <h1>Publisher Details</h1>
         <p>{{publisher.name}}</p>
         <h2>Albums: </h2>
         <table class = "album-table">
             <tr>
+                <th>Cover</th>
                 <th>Album</th>
                 <th>Artist</th>
                 <th>Released</th>
@@ -12,6 +14,7 @@
             {% for album in albums %}
                     <tr>
                 {% if publisher.id == album.publisher.id %}
+                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images' %}/{{album.id}}.jpg"></td>
                     <td><a href = "{% url 'albums_detail' album.id%}">{{album.title}}</a></td>
                     <td><a href = "{% url 'artist_detail' album.artist.id%}">{{album.artist}}</a></td>
                     <td>{{album.release_date}}</td>
@@ -23,6 +26,7 @@
         <h2>Songs: </h2>
         <table class = "song-table">
             <tr>
+                <th>Cover</th>
                 <th>Song</th>
                 <th>Length</th>
                 <th>Artist</th>
@@ -32,6 +36,7 @@
             {% for song in songs %}
                 {% if publisher.id == song.album.publisher.id %}
                 <tr>
+                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images' %}/{{song.album.id}}.jpg"></td>
                     <td><a href = "{% url 'song_detail' song.id%}">{{song.title}}</a></td>
                     <td>{{song.length}}</td>
                     <td><a href = "{% url 'artist_detail' song.artist.id %}"></a>{{song.artist}}</td>
