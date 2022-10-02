@@ -3,6 +3,7 @@
     {% block content %}
         <h1>Artist Details</h1>
         <p>{{artist}}</p>
+        <img class= "artist-image" style = "width: 200px; height: auto;" src = "{% static '/images/artists' %}/{{artist.id}}.jpg">
         <h2>Albums: </h2>
         <table class = "album-table">
             <tr>
@@ -13,7 +14,7 @@
             {% for album in albums %}
                 {% if artist.id == album.artist.id %}
                 <tr>
-                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images' %}/{{album.id}}.jpg"></td>
+                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg"></td>
                     <td><a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a></td>
                     <td>{{album.release_date}}</td>
                 </tr>
