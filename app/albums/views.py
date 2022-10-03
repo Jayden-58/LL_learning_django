@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from .models import Album, Publisher, Artist, Song
+import random
 # Create your views here.
 def home(request):
     #return HttpResponse('<p>home veiw</p>')
@@ -72,6 +73,22 @@ def album_detail(request, album_id):
     except Album.DoesNotExist:
         raise Http404('Album not Found')
     return render(request, 'album_detail.html', {
+        'album': album,
+        'songs': songs,
+        'publisher': publisher,
+    })
+
+def random_album_detail(request):
+    max_albums = len(Album.objects.all())
+    album_id = random.randint(1, max_albums)
+    try:
+    
+        album = Album.objects.get(id=album_id)
+        songs = Song.objects.all
+        publisher = Publisher.objects.all()
+    except Album.DoesNotExist:
+        raise Http404('Album not Found')
+    return render(request, 'random_album_detail.html', {
         'album': album,
         'songs': songs,
         'publisher': publisher,

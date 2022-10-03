@@ -31,6 +31,7 @@ urlpatterns = [
 
     #album urls
     path('albums/<int:album_id>/', views.album_detail, name='albums_detail'),
+    path('albums/random/', views.random_album_detail, name='random_album_detail'),
     path('albums/all', views.all_albums, name='all_albums'),
 
     #song urls
