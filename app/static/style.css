@@ -37,8 +37,8 @@ table{
 .homepage-button{
     background-image: radial-gradient(rgb(76, 247, 76), rgb(4, 198, 4));
     border-radius: 20px;
-    margin: 2em;
     padding: .6em;
+    margin: 1.5em;
     justify-self: center;
     text-decoration: none;
     color: darkgreen;
@@ -51,7 +51,9 @@ table{
 
 #homepage-links{
     text-align: center;
+    justify-content: space-evenly;
     margin-top: 2em;
+    width: 100%;
 }
 
 #homepage-link{
