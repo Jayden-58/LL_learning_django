@@ -30,12 +30,16 @@ table, th, td{
     text-align: center;
 }
 
+th{
+    background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
+}
+
 table{
     width: 100%;
 }
 
 .homepage-button{
-    background-image: radial-gradient(rgb(76, 247, 76), rgb(4, 198, 4));
+    background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
     border-radius: 20px;
     padding: .6em;
     margin: 1.5em;
@@ -70,4 +74,7 @@ table{
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+}
+.image-container{
+    text-align: center;
 }

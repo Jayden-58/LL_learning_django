@@ -3,16 +3,18 @@
 {% load static %}
     {% block content %}
         <section class = "album-details">
-            <h1>Album Details</h1>
-            <img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg">
-            <h2>{{album.title}}</h2>
-            <h2>Release Date: </h2>
-            <p>{{album.release_date}}</p>
-            <h2>Publisher: </h2>
-            <a href = "{% url 'publisher_detail' album.publisher.id %}">{{album.publisher}}</a>
+            <h1 style = "text-align: center;">Album Details</h1>
+            <div class = "image-container">
+            <img class= "album-image" style = "width: 200px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg">
+            </div>
+            <h2 style = "text-align: center;">{{album.title}}</h2>
+            <h2 style = "text-align: center;">Release Date: </h2>
+            <p style = "text-align: center;">{{album.release_date}}</p>
+            <h2 style = "text-align: center;">Publisher: </h2>
+            <a style = "text-align: center;" href = "{% url 'publisher_detail' album.publisher.id %}"><p style = "text-align: center;">{{album.publisher}}</p></a>
         </section>
         <div class = "song-table-w-h2">
-            <h2>Songs:</h2>
+            <h2 style = "text-align: center;">Songs:</h2>
             <table class = "song-table">
                         <tr>
                             <th>Song</th>

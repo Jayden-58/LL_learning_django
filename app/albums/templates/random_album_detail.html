@@ -2,9 +2,9 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-        <section class = "album-details">
+        <section class = "album-details" style = "text-align: center;">
             <h1>Album Details</h1>
-            <img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg">
+            <img class= "album-image" style = "width: 200px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg">
             <h2>{{album.title}}</h2>
             <h2>Release Date: </h2>
             <p>{{album.release_date}}</p>
@@ -12,7 +12,7 @@
             <a href = "{% url 'publisher_detail' album.publisher.id %}">{{album.publisher}}</a>
         </section>
         <div class = "song-table-w-h2">
-            <h2>Songs:</h2>
+            <h2 style = "text-align: center;">Songs:</h2>
             <table class = "song-table">
                         <tr>
                             <th>Song</th>
