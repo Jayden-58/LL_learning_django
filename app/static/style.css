@@ -1,8 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
     height: 6em;
     text-align: center;
     border-radius: 4px;
+    border: 1px solid hidden;
+    padding-top: 1em;
+}
+
+.header-links{
+    text-decoration: none;
+    margin: 1em;
+    color: darkgreen;
+}
+.header-links:hover{
+    color: green;
+}
+
+#header-links-group{
+    margin-top: 1em;
 }
 
 table, th, td{
@@ -23,4 +43,29 @@ table{
     text-decoration: none;
     color: darkgreen;
     text-shadow: 1px, 1px black;
+}
+.homepage-button:hover{
+    color: green;
+    background-image: radial-gradient(rgb(99, 246, 99), rgb(21, 219, 21));
+}
+
+#homepage-links{
+    text-align: center;
+    margin-top: 2em;
+}
+
+#homepage-link{
+    text-decoration: none;
+    color: darkgreen;
+}
+#homepage-link:hover{
+    color: green;
+}
+
+#homepage-image{
+    display: block;
+    margin-top: 2em;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }

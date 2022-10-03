@@ -1,11 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
     {% block content %}
-        <h1>Homepage</h1>
+        <h1 style = "text-align: center;">Homepage</h1>
         <section id = "homepage-links"> 
             <a class = "homepage-button" href = "{% url 'all_albums' %}">All Albums</a>
             <a class = "homepage-button" href = "{% url 'all_artists' %}">All Artists</a>
             <a class = "homepage-button" href = "{% url 'all_publishers' %}">All Publishers</a>
             <a class = "homepage-button" href ="{% url 'all_songs'%}">All Songs</a>
         </section>
+        <img id = "homepage-image" src = "{% static '/images/homepage/vinyl-records.jpg'  %}">
         
     {% endblock %}

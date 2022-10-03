@@ -7,11 +7,13 @@
 
 <body>
     <header>
-        <h1>Jayden's Record Database</h1>
-        <a href="{% url 'all_albums' %}">All Albums</a>
-        <a href="{% url 'all_artists' %}">All Artists</a>
-        <a href="{% url 'all_publishers' %}">All Publishers</a>
-        <a href="{% url 'all_songs'%}">All Songs</a>
+        <h1><a id = "homepage-link" href = "{% url 'home' %}">Jayden's Record Database</a></h1>
+        <div id = "header-links-group">
+            <a class = "header-links" href="{% url 'all_albums' %}">All Albums</a>
+            <a class = "header-links" href="{% url 'all_artists' %}">All Artists</a>
+            <a class = "header-links" href="{% url 'all_publishers' %}">All Publishers</a>
+            <a class = "header-links" href="{% url 'all_songs'%}">All Songs</a>
+        </div>
     </header>
     <div>
         {% block content %}
