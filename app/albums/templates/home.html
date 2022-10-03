@@ -2,13 +2,10 @@
     {% block content %}
         <h1>Homepage</h1>
         <section id = "homepage-links"> 
-            <a href = "{% url 'all_albums' %}">All Albums</a>
-            <br>
-            <a href = "{% url 'all_artists' %}">All Artists</a>
-            <br>
-            <a href = "{% url 'all_publishers' %}">All Publishers</a>
-            <br>
-            <a href ="{% url 'all_songs'%}">All Songs</a>
+            <a class = "homepage-button" href = "{% url 'all_albums' %}">All Albums</a>
+            <a class = "homepage-button" href = "{% url 'all_artists' %}">All Artists</a>
+            <a class = "homepage-button" href = "{% url 'all_publishers' %}">All Publishers</a>
+            <a class = "homepage-button" href ="{% url 'all_songs'%}">All Songs</a>
         </section>
         
     {% endblock %}

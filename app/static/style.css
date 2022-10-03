@@ -1,4 +1,26 @@
 header {
-    background-color: red;
-    height: 20%;
+    background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
+    height: 6em;
+    text-align: center;
+    border-radius: 4px;
+}
+
+table, th, td{
+    border: 1px solid;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+
+.homepage-button{
+    background-image: radial-gradient(rgb(76, 247, 76), rgb(4, 198, 4));
+    border-radius: 20px;
+    margin: 2em;
+    padding: .6em;
+    justify-self: center;
+    text-decoration: none;
+    color: darkgreen;
+    text-shadow: 1px, 1px black;
 }
