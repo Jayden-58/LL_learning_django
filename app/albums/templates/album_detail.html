@@ -8,6 +8,7 @@
             <img class= "album-image" style = "width: 200px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg">
             </div>
             <h2 style = "text-align: center;">{{album.title}}</h2>
+            <h2 style = "text-align: center;"><a href = "{% url 'artist_detail' album.artist.id %}" >{{album.artist}}</a></h2>
             <h2 style = "text-align: center;">Release Date: </h2>
             <p style = "text-align: center;">{{album.release_date}}</p>
             <h2 style = "text-align: center;">Publisher: </h2>
