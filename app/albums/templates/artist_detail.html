@@ -6,7 +6,7 @@
         <div class = image-container>
             <img class= "artist-image" style = "width: 35vw; height: auto;" src = "{% static '/images/artists' %}/{{artist.id}}.jpg">
         </div> 
-        <h2>Albums: </h2>
+        <h2 style = "text-align: center;">Albums</h2>
         <table class = "album-table">
             <tr>
                 <th>Cover</th>
@@ -23,7 +23,7 @@
                 {% endif %}
             {% endfor %}
         </table>
-        <h2>Songs: </h2>
+        <h2 style = "text-align: center;">Songs</h2>
         <table class = "song-table">
                 <tr>
                     <th>Cover</th>
