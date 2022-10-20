@@ -1,7 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
+a {
+    color: hotpink;
+  }
 
 header {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
@@ -12,33 +16,36 @@ header {
     padding-top: 1em;
 }
 
-.header-links{
+.header-links {
     text-decoration: none;
     margin: 1em;
     color: darkgreen;
 }
-.header-links:hover{
+
+.header-links:hover {
     color: green;
 }
 
-#header-links-group{
+#header-links-group {
     margin-top: 1em;
 }
 
-table, th, td{
+table,
+th,
+td {
     border: 1px solid;
     text-align: center;
 }
 
-th{
+th {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
 }
 
-table{
+table {
     width: 100%;
 }
 
-.homepage-button{
+.homepage-button {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
     border-radius: 20px;
     padding: .6em;
@@ -48,33 +55,36 @@ table{
     color: darkgreen;
     text-shadow: 1px, 1px black;
 }
-.homepage-button:hover{
+
+.homepage-button:hover {
     color: green;
     background-image: radial-gradient(rgb(99, 246, 99), rgb(21, 219, 21));
 }
 
-#homepage-links{
+#homepage-links {
     text-align: center;
     justify-content: space-evenly;
     margin-top: 2em;
     width: 100%;
 }
 
-#homepage-link{
+#homepage-link {
     text-decoration: none;
     color: darkgreen;
 }
-#homepage-link:hover{
+
+#homepage-link:hover {
     color: green;
 }
 
-#homepage-image{
+#homepage-image {
     display: block;
     margin-top: 2em;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
-.image-container{
+
+.image-container {
     text-align: center;
 }
