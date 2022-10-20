@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-        <h1 style = "text-align: center;">Artist Details</h1>
+        <h1 class = "page-title"  style = "text-align: center;">Artist Details</h1>
         <p style = "text-align: center;">{{artist}}</p>
         <div class = image-container>
             <img class= "artist-image" style = "width: 35vw; height: auto;" src = "{% static '/images/artists' %}/{{artist.id}}.jpg">

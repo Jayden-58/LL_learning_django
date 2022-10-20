@@ -4,8 +4,17 @@
 }
 
 a {
-    color: hotpink;
+    color: rgb(16, 168, 16);
+    text-decoration:none;
   }
+
+a:hover {
+    text-decoration:underline;
+}
+
+a:visited {
+    color: darkgreen;
+}
 
 header {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
@@ -16,10 +25,12 @@ header {
     padding-top: 1em;
 }
 
+
 .header-links {
     text-decoration: none;
     margin: 1em;
     color: darkgreen;
+    text-shadow: none;
 }
 
 .header-links:hover {
@@ -87,4 +98,8 @@ table {
 
 .image-container {
     text-align: center;
+}
+
+.page-title{
+    margin: 2em;
 }
