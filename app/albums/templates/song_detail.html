@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-        <h1 class = "page-title"  style = "text-align: center;">Song Details</h1>
+        <div class = "page-title-container">
+            <h1 class = "page-title"  style = "text-align: center;">Song Details</h1>
+        </div>
         <p style="text-align: center;" >{{song.title}}</p>
         <table class = "song-table">
             <tr>
