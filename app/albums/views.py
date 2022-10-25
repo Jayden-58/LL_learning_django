@@ -10,7 +10,7 @@ def home(request):
 
 def all_publishers(request):
     try:
-        publishers = Publisher.objects.all()
+        publishers = Publisher.objects.all().order_by('name')
     except Publisher.DoesNotExist:
         raise Http404('Publisher not found')
     return render(request, 'publisher_all.html',{
@@ -32,7 +32,7 @@ def publisher_detail(request, publisher_id):
 
 def all_artists(request):
     try:
-        artists = Artist.objects.all()
+        artists = Artist.objects.all().order_by('first_name')
     except Artist.DoesNotExist:
         raise Http404('Artist not found')
     return render(request, 'artist_all.html', {
@@ -55,7 +55,7 @@ def artist_detail(request, artist_id):
 def all_albums(request):
 
     try:
-        albums = Album.objects.all()
+        albums = Album.objects.all().order_by('title')
         albums_length = len(Album.objects.all())
     except Album.DoesNotExist:
         raise Http404('Album not Found')
@@ -96,7 +96,7 @@ def random_album_detail(request):
 
 def song_all(request):
     try:
-        songs = Song.objects.all()
+        songs = Song.objects.all().order_by('title')
     except Song.DoesNotExist:
         raise Http404('Song not found')
     return render(request, 'song_all.html', {
