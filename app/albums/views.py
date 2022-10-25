@@ -56,12 +56,10 @@ def all_albums(request):
 
     try:
         albums = Album.objects.all().order_by('title')
-        albums_length = len(Album.objects.all())
     except Album.DoesNotExist:
         raise Http404('Album not Found')
     return render(request, 'all_albums.html', {
         'albums': albums,
-        'albums_length': albums_length,
     })
 
 
@@ -110,4 +108,19 @@ def song_detail(request, song_id):
         raise Http404('Song not found')
     return render(request, 'song_detail.html', {
         'song': song
+    })
+
+def statistics(request):
+    try:
+        songs_amount = len(Song.objects.all())
+        albums_amount = len(Album.objects.all())
+        publishers_amount = len(Publisher.objects.all())
+        artists_amount = len(Artist.objects.all())
+    except Song.DoesNotExist:
+        raise Http404('data not found')
+    return render(request, 'statistics.html', {
+        'songs_amount': songs_amount,
+        'albums_amount': albums_amount,
+        'publishers_amount': publishers_amount,
+        'artists_amount': artists_amount
     })

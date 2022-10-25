@@ -59,8 +59,8 @@ table {
 .homepage-button {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
     border-radius: 20px;
-    padding: .6em;
-    margin: 1.5em;
+    padding: .4em;
+    margin: 1em;
     justify-self: center;
     text-decoration: none;
     color: darkgreen;

@@ -36,9 +36,10 @@ urlpatterns = [
 
     #song urls
     path('songs/<int:song_id>/', views.song_detail, name='song_detail'),
-    path('songs/all', views.song_all, name='all_songs')
+    path('songs/all', views.song_all, name='all_songs'),
 
-
+    #Statistics Url
+    path('statistics', views.statistics, name = "statistics")
 
     #add more later
 ]
