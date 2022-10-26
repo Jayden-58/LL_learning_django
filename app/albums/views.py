@@ -119,9 +119,11 @@ def statistics(request):
         albums_us = len(Album.objects.filter(country_of_pressing = "US"))
         albums_can = len(Album.objects.filter(country_of_pressing = "Canada"))
         albums_mex = len(Album.objects.filter(country_of_pressing = "Mexico"))
-        albums_eur = len(Album.objects.filter(country_of_pressing  = "Europe"))
         albums_fr = len(Album.objects.filter(country_of_pressing  = "France"))
         albums_uk = len(Album.objects.filter(country_of_pressing  = "UK"))
+        albums_jp = len(Album.objects.filter(country_of_pressing  = "Japan"))
+        albums_au = len(Album.objects.filter(country_of_pressing  = "Australia"))
+        albums_other = len(Album.objects.filter().exclude(country_of_pressing  = "Australia").exclude(country_of_pressing  = "US").exclude(country_of_pressing  = "Japan").exclude(country_of_pressing  = "UK").exclude(country_of_pressing  = "France").exclude(country_of_pressing = "Mexico").exclude(country_of_pressing = "Canada"))
     except Song.DoesNotExist:
         raise Http404('data not found')
     return render(request, 'statistics.html', {
@@ -132,9 +134,11 @@ def statistics(request):
         'albums_us': albums_us,
         'albums_can': albums_can,
         'albums_mex': albums_mex,
-        'albums_eur': albums_eur,
         'albums_fr': albums_fr,
-        'albums_uk': albums_uk
+        'albums_uk': albums_uk,
+        'albums_jp': albums_jp,
+        'albums_au': albums_au,
+        'albums_other': albums_other
 
 
     })
