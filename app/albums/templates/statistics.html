@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-    <p>Album amount: {{albums_amount}}</p>
-    <p>Song Amount: {{songs_amount}}</p>
-    <p>Publisher Amount: {{publishers_amount}}</p>
-    <p>Artist Amount: {{artists_amount}}</p>
+    <div class = "page-title-container">
+        <h1 class = "page-title" style = "text-align: center;">Statistics</h1>
+    </div>
+    <h2 class = "big-stats">Album Amount: {{albums_amount}}</h2>
+    <h2 class = "big-stats">Song Amount: {{songs_amount}}</h2>
+    <h2 class = "big-stats">Publisher Amount: {{publishers_amount}}</h2>
+    <h2 class = "big-stats">Artist Amount: {{artists_amount}}</h2>
     {% endblock %}
