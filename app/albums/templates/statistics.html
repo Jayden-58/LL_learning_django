@@ -10,7 +10,7 @@
     <h2 class = "big-stats">Artist Amount: {{artists_amount}}</h2>
 
     <!--chart.js stuff-->
-    <div>
+    <div id = "country-pi-chart">
         <canvas id="myChart"></canvas>
     </div>
 
@@ -18,21 +18,27 @@
     <script>
         const data = {
             labels: [
-                'Red',
-                'Blue',
-                'Yellow'
+                'United States',
+                'Canada',
+                'Mexico',
+                'Europe',
+                'France',
+                'United Kingdom'
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [300, 50, 100],
+                data: ["{{albums_us}}", "{{albums_can}}", "{{albums_mex}}", "{{albums_eur}}", "{{albums_fr}}", "{{albums_uk}}"],
                 backgroundColor: [
                 'rgb(255, 99, 132)',
                 'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
+                'rgb(255, 205, 86)',
+                'rgb(255, 20, 99)',
+                'rgb(155, 20, 99)',
+                'rgb(55, 20, 99)'
                 ],
                 hoverOffset: 4
             }]
-            };
+        }
       
     const config = {
         type: 'pie',

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, JsonResponse
 from .models import Album, Publisher, Artist, Song
 import random
 # Create your views here.
@@ -116,11 +116,25 @@ def statistics(request):
         albums_amount = len(Album.objects.all())
         publishers_amount = len(Publisher.objects.all())
         artists_amount = len(Artist.objects.all())
+        albums_us = len(Album.objects.filter(country_of_pressing = "US"))
+        albums_can = len(Album.objects.filter(country_of_pressing = "Canada"))
+        albums_mex = len(Album.objects.filter(country_of_pressing = "Mexico"))
+        albums_eur = len(Album.objects.filter(country_of_pressing  = "Europe"))
+        albums_fr = len(Album.objects.filter(country_of_pressing  = "France"))
+        albums_uk = len(Album.objects.filter(country_of_pressing  = "UK"))
     except Song.DoesNotExist:
         raise Http404('data not found')
     return render(request, 'statistics.html', {
         'songs_amount': songs_amount,
         'albums_amount': albums_amount,
         'publishers_amount': publishers_amount,
-        'artists_amount': artists_amount
+        'artists_amount': artists_amount,
+        'albums_us': albums_us,
+        'albums_can': albums_can,
+        'albums_mex': albums_mex,
+        'albums_eur': albums_eur,
+        'albums_fr': albums_fr,
+        'albums_uk': albums_uk
+
+
     })

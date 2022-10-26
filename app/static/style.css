@@ -119,3 +119,9 @@ table {
     text-align: center;
     margin: 1em;
 }
+
+#country-pi-chart{
+    width: 25em;
+    padding-left: calc(50% - 12.5em);
+}
+
