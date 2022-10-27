@@ -120,5 +120,15 @@ table {
     margin: 1em;
 }
 
+#country-pi-chart{
+    width: 2em;
+    padding-left: calc(50% - 12.5em);
+}
+
+#date-bar-chart{
+    width: 12em;
+    padding-left: calc(50% - 12.5em);
+}
+
 
 

@@ -11,10 +11,11 @@
 
     <!--chart.js stuff-->
     <h2 style="text-align: center;">Countries:</h2>
-    <div style="width:240px;height:240px" id = "country-pi-chart">
+    <div id = "country-pi-chart">
         <canvas id="countryChart"></canvas>
     </div>
-    <div style="width:240px;height:240px">
+    <h2 style="text-align: center;">Decades (not yet functional):</h2>
+    <div id = "date-bar-chart">
         <canvas id="dateChart"></canvas>
     </div>
 
@@ -49,36 +50,39 @@
             }]
         }
       
-    const countryChartConfig = {
-        type: 'pie',
-        data: countryData,
-          options: {}
-        };
-      </script>
-      <script>
-        const labels = Utils.months({count: 7});
+        const countryChartConfig = {
+            type: 'pie',
+            data: countryData,
+            options: {}
+            };
+    </script>
+
+
+
+    <script>
+        const labels = ["40's", "50's", "60's", "70's", "80's", "90's", "00's", "10's", "20's"]
         const data = {
         labels: labels,
         datasets: [{
             label: 'My First Dataset',
             data: [65, 59, 80, 81, 56, 55, 40],
             backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 205, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(201, 203, 207, 0.2)'
+            'rgba(57, 117, 33, 0.2)',
+            'rgba(74, 152, 43, 0.2)',
+            'rgba(91, 187, 53, 0.2)',
+            'rgba(115, 205, 80, 0.2)',
+            'rgba(143, 215, 115, 0.2)',
+            'rgba(171, 225, 150, 0.2)',
+            'rgba(199, 235, 185, 0.2)'
             ],
             borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 205, 86)',
-            'rgb(75, 192, 192)',
-            'rgb(54, 162, 235)',
-            'rgb(153, 102, 255)',
-            'rgb(201, 203, 207)'
+            'rgb(57, 117, 33)',
+            'rgb(74, 152, 43)',
+            'rgb(91, 187, 53)',
+            'rgb(115, 205, 80)',
+            'rgb(143, 215, 115)',
+            'rgb(171, 225, 150)',
+            'rgb(199, 235, 185)'
             ],
             borderWidth: 1
         }]
@@ -97,8 +101,8 @@
         };
 
 
-      </script>
-      <script>
+    </script>
+    <script>
         const countryChart = new Chart(
           document.getElementById('countryChart'),
           countryChartConfig
