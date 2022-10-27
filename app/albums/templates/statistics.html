@@ -14,7 +14,7 @@
     <div id = "country-pi-chart">
         <canvas id="countryChart"></canvas>
     </div>
-    <h2 style="text-align: center;">Decades (not yet functional):</h2>
+    <h2 style="text-align: center;">Decades:</h2>
     <div id = "date-bar-chart">
         <canvas id="dateChart"></canvas>
     </div>
@@ -60,35 +60,39 @@
 
 
     <script>
-        const labels = ["40's", "50's", "60's", "70's", "80's", "90's", "00's", "10's", "20's"]
+        const yearLabels = ["40's", "50's", "60's", "70's", "80's", "90's", "00's", "10's", "20's"]
         const data = {
-        labels: labels,
+        labels: yearLabels,
         datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            label: 'Decades',
+            data: ["{{albums_40s}}", "{{albums_50s}}", "{{albums_60s}}", "{{albums_70s}}", "{{albums_80s}}", "{{albums_90s}}", "{{albums_00s}}", "{{albums_10s}}", "{{albums_20s}}"],
             backgroundColor: [
-            'rgba(57, 117, 33, 0.2)',
-            'rgba(74, 152, 43, 0.2)',
-            'rgba(91, 187, 53, 0.2)',
-            'rgba(115, 205, 80, 0.2)',
-            'rgba(143, 215, 115, 0.2)',
-            'rgba(171, 225, 150, 0.2)',
-            'rgba(199, 235, 185, 0.2)'
+            'rgba(65, 134, 38, 0.9)',
+            'rgba(79, 163, 47, 0.9)',
+            'rgba(94, 193, 55, 0.9)',
+            'rgba(115, 205, 80, 0.9)',
+            'rgba(138, 213, 109, 0.9)',
+            'rgba(162, 222, 138, 0.9)',
+            'rgba(185, 230, 168, 0.9)',
+            'rgba(208, 238, 197, 0.9)',
+            'rgba(232, 247, 226, 0.9)'
             ],
             borderColor: [
-            'rgb(57, 117, 33)',
-            'rgb(74, 152, 43)',
-            'rgb(91, 187, 53)',
+            'rgb(65, 134, 38)',
+            'rgb(79, 163, 47)',
+            'rgb(94, 193, 55)',
             'rgb(115, 205, 80)',
-            'rgb(143, 215, 115)',
-            'rgb(171, 225, 150)',
-            'rgb(199, 235, 185)'
+            'rgb(138, 213, 109)',
+            'rgb(162, 222, 138)',
+            'rgb(185, 230, 168)',
+            'rgb(208, 238, 197)',
+            'rgb(232, 247, 226)'
             ],
             borderWidth: 1
         }]
         };
 
-        const config = {
+        const dateChartConfig = {
         type: 'bar',
         data: data,
         options: {
@@ -111,7 +115,7 @@
     <script>
         const dateChart = new Chart(
           document.getElementById('dateChart'),
-          config
+          dateChartConfig
         );
     </script>
       

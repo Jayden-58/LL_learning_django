@@ -1,3 +1,4 @@
+from platform import release
 from django.shortcuts import render
 from django.http import HttpResponse, Http404, JsonResponse
 from .models import Album, Publisher, Artist, Song
@@ -116,6 +117,8 @@ def statistics(request):
         albums_amount = len(Album.objects.all())
         publishers_amount = len(Publisher.objects.all())
         artists_amount = len(Artist.objects.all())
+
+        #location data
         albums_us = len(Album.objects.filter(country_of_pressing = "US"))
         albums_can = len(Album.objects.filter(country_of_pressing = "Canada"))
         albums_mex = len(Album.objects.filter(country_of_pressing = "Mexico"))
@@ -124,6 +127,17 @@ def statistics(request):
         albums_jp = len(Album.objects.filter(country_of_pressing  = "Japan"))
         albums_au = len(Album.objects.filter(country_of_pressing  = "Australia"))
         albums_other = len(Album.objects.filter().exclude(country_of_pressing  = "Australia").exclude(country_of_pressing  = "US").exclude(country_of_pressing  = "Japan").exclude(country_of_pressing  = "UK").exclude(country_of_pressing  = "France").exclude(country_of_pressing = "Mexico").exclude(country_of_pressing = "Canada"))
+
+        #Album Decade Data
+        albums_40s = len(Album.objects.filter(release_date__startswith = "194"))
+        albums_50s = len(Album.objects.filter(release_date__startswith = "195"))
+        albums_60s = len(Album.objects.filter(release_date__startswith = "196"))
+        albums_70s = len(Album.objects.filter(release_date__startswith = "197"))
+        albums_80s = len(Album.objects.filter(release_date__startswith = "198"))
+        albums_90s = len(Album.objects.filter(release_date__startswith = "199"))
+        albums_00s = len(Album.objects.filter(release_date__startswith = "200"))
+        albums_10s = len(Album.objects.filter(release_date__startswith = "201"))
+        albums_20s = len(Album.objects.filter(release_date__startswith = "202"))
     except Song.DoesNotExist:
         raise Http404('data not found')
     return render(request, 'statistics.html', {
@@ -138,7 +152,16 @@ def statistics(request):
         'albums_uk': albums_uk,
         'albums_jp': albums_jp,
         'albums_au': albums_au,
-        'albums_other': albums_other
+        'albums_other': albums_other,
+        'albums_40s': albums_40s,
+        'albums_50s': albums_50s,
+        'albums_60s': albums_60s,
+        'albums_70s': albums_70s,
+        'albums_80s': albums_80s,
+        'albums_90s': albums_90s,
+        'albums_00s': albums_00s,
+        'albums_10s': albums_10s,
+        'albums_20s': albums_20s
 
 
     })
