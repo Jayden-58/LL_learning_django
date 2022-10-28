@@ -14,9 +14,13 @@
     <div id = "country-pi-chart">
         <canvas id="countryChart"></canvas>
     </div>
-    <h2 style="text-align: center;">Decades:</h2>
+    <h2 style="text-align: center;">AlbumDecades:</h2>
     <div id = "date-bar-chart">
         <canvas id="dateChart"></canvas>
+    </div>
+    <h2 style="text-align: center;">Publisher Decades:</h2>
+    <div id = "date-bar-chart">
+        <canvas id="publisherDateChart"></canvas>
     </div>
 
 
@@ -61,7 +65,7 @@
 
     <script>
         const yearLabels = ["40's", "50's", "60's", "70's", "80's", "90's", "00's", "10's", "20's"]
-        const data = {
+        const albumYearData = {
         labels: yearLabels,
         datasets: [{
             label: 'Decades',
@@ -94,7 +98,7 @@
 
         const dateChartConfig = {
         type: 'bar',
-        data: data,
+        data: albumYearData,
         options: {
             scales: {
             y: {
@@ -107,6 +111,51 @@
 
     </script>
     <script>
+        const labels = ["1880's", "1890's", "1900's", "1910's", "1920's","30's","40's", "50's", "60's", "70's", "80's", "90's", "00's", "10's", "20's"]
+        const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First Dataset',
+            data: ["{{publishers_1880s}}", "{{publishers_1890s}}", "{{publishers_1900s}}", "{{publishers_1910s}}", "{{publishers_1920s}}", "{{publishers_30s}}", "{{publishers_40s}}", "{{publishers_50s}}", "{{publishers_60s}}", "{{publishers_70s}}", "{{publishers_80s}}", "{{publishers_90s}}", "{{publishers_00s}}", "{{publishers_10s}}", "{{publishers_20s}}",],
+            backgroundColor: [
+            'rgba(65, 134, 38, 0.9)',
+            'rgba(79, 163, 47, 0.9)',
+            'rgba(94, 193, 55, 0.9)',
+            'rgba(115, 205, 80, 0.9)',
+            'rgba(138, 213, 109, 0.9)',
+            'rgba(162, 222, 138, 0.9)',
+            'rgba(185, 230, 168, 0.9)',
+            'rgba(208, 238, 197, 0.9)',
+            'rgba(232, 247, 226, 0.9)'
+            ],
+            borderColor: [
+            'rgb(65, 134, 38)',
+            'rgb(79, 163, 47)',
+            'rgb(94, 193, 55)',
+            'rgb(115, 205, 80)',
+            'rgb(138, 213, 109)',
+            'rgb(162, 222, 138)',
+            'rgb(185, 230, 168)',
+            'rgb(208, 238, 197)',
+            'rgb(232, 247, 226)'
+            ],
+            borderWidth: 1,
+        }]
+        };
+
+        const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        },
+        };
+    </script>
+    <script>
         const countryChart = new Chart(
           document.getElementById('countryChart'),
           countryChartConfig
@@ -116,6 +165,12 @@
         const dateChart = new Chart(
           document.getElementById('dateChart'),
           dateChartConfig
+        );
+    </script>
+    <script>
+        const publisherDateChart = new Chart(
+          document.getElementById('publisherDateChart'),
+          config
         );
     </script>
       

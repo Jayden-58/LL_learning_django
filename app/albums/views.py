@@ -138,6 +138,25 @@ def statistics(request):
         albums_00s = len(Album.objects.filter(release_date__startswith = "200"))
         albums_10s = len(Album.objects.filter(release_date__startswith = "201"))
         albums_20s = len(Album.objects.filter(release_date__startswith = "202"))
+
+        #Publisher Decade data
+        publishers_1880s = len(Publisher.objects.filter(date_founded__startswith = "188"))
+        publishers_1890s = len(Publisher.objects.filter(date_founded__startswith = "189"))
+        publishers_1900s = len(Publisher.objects.filter(date_founded__startswith = "190"))
+        publishers_1910s = len(Publisher.objects.filter(date_founded__startswith = "191"))
+        publishers_1920s = len(Publisher.objects.filter(date_founded__startswith = "192"))
+        publishers_30s = len(Publisher.objects.filter(date_founded__startswith = "193"))
+        publishers_40s = len(Publisher.objects.filter(date_founded__startswith = "194"))
+        publishers_50s = len(Publisher.objects.filter(date_founded__startswith = "195"))
+        publishers_60s = len(Publisher.objects.filter(date_founded__startswith = "196"))
+        publishers_70s = len(Publisher.objects.filter(date_founded__startswith = "197"))
+        publishers_80s = len(Publisher.objects.filter(date_founded__startswith = "198"))
+        publishers_90s = len(Publisher.objects.filter(date_founded__startswith = "199"))
+        publishers_00s = len(Publisher.objects.filter(date_founded__startswith = "200"))
+        publishers_10s = len(Publisher.objects.filter(date_founded__startswith = "201"))
+        publishers_20s = len(Publisher.objects.filter(date_founded__startswith = "202"))
+
+
     except Song.DoesNotExist:
         raise Http404('data not found')
     return render(request, 'statistics.html', {
@@ -153,6 +172,7 @@ def statistics(request):
         'albums_jp': albums_jp,
         'albums_au': albums_au,
         'albums_other': albums_other,
+
         'albums_40s': albums_40s,
         'albums_50s': albums_50s,
         'albums_60s': albums_60s,
@@ -161,7 +181,22 @@ def statistics(request):
         'albums_90s': albums_90s,
         'albums_00s': albums_00s,
         'albums_10s': albums_10s,
-        'albums_20s': albums_20s
+        'albums_20s': albums_20s,
+        'publishers_1880s': publishers_1880s,
+        'publishers_1890s': publishers_1890s,
+        'publishers_1900s': publishers_1900s,
+        'publishers_1910s': publishers_1910s,
+        'publishers_1920s': publishers_1920s,
+        'publishers_30s': publishers_30s,
+        'publishers_40s': publishers_40s,
+        'publishers_50s': publishers_50s,
+        'publishers_60s': publishers_60s,
+        'publishers_70s': publishers_70s,
+        'publishers_80s': publishers_80s,
+        'publishers_90s': publishers_90s,
+        'publishers_00s': publishers_00s,
+        'publishers_10s': publishers_10s,
+        'publishers_20s': publishers_20s
 
 
     })
