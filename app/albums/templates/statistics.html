@@ -22,7 +22,7 @@
     <div id = "date-bar-chart">
         <canvas id="publisherDateChart"></canvas>
     </div>
-    <h2 style="text-align: center;">Song Lengths (not yet functional):</h2>
+    <h2 style="text-align: center;">Song Lengths:</h2>
     <div id = "date-bar-chart">
         <canvas id="songLengthChart"></canvas>
     </div>
@@ -189,13 +189,13 @@
     </script>
 
     <script>
-        //Song length CHART INCOMPLETE
-        const lengthLabels = ["< 1", "1-2", "2-3", "3-4", "4-5","5-6","6-7", "7-8", "8-9", "9-10", "10-15", "15-20", "20-25", "25-30", "> 30"]
+        //Song length CHART 
+        const lengthLabels = ["< 1", "1-2", "2-3", "3-4", "4-5","5-6","6-7", "7-8", "8-9", "9-10", "10-20", "20-30"]
         const lengthData = {
         labels: lengthLabels,
         datasets: [{
-            label: 'Publishers Founded',
-            data: ["{{songs_length_under_minute}}", "{{songs_length_one_to_two}}", "{{songs_length_two_to_three}}", "{{songs_length_three_to_four}}", "{{songs_length_four_to_five}}", "{{songs_length_five_to_six}}", "{{songs_length_six_to_seven}}", "{{songs_length_seven_to_eight}}", "{{songs_length_eight_to_nine}}", "{{songs_length_nine_to_ten}}", "{{publishers_80s}}", "{{publishers_90s}}", "{{publishers_00s}}", "{{publishers_10s}}", "{{publishers_20s}}",],
+            label: 'Songs',
+            data: ["{{songs_length_under_minute}}", "{{songs_length_one_to_two}}", "{{songs_length_two_to_three}}", "{{songs_length_three_to_four}}", "{{songs_length_four_to_five}}", "{{songs_length_five_to_six}}", "{{songs_length_six_to_seven}}", "{{songs_length_seven_to_eight}}", "{{songs_length_eight_to_nine}}", "{{songs_length_nine_to_ten}}", "{{songs_length_ten_to_twenty}}", "{{songs_length_twenty_to_thirty}}"],
             backgroundColor: [
             'rgba(55, 113, 32, 0.4)',
             'rgba(59, 121, 35, 0.4)',

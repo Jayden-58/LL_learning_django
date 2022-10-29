@@ -166,7 +166,9 @@ def statistics(request):
         songs_length_six_to_seven = len(Song.objects.filter( length__startswith = "6").extra(where=["LENGTH(length) = 4"]))
         songs_length_seven_to_eight = len(Song.objects.filter( length__startswith = "7").extra(where=["LENGTH(length) = 4"]))
         songs_length_eight_to_nine = len(Song.objects.filter( length__startswith = "8").extra(where=["LENGTH(length) = 4"]))
-        songs_length_nine_to_ten = len(Song.objects.filter( length__startswith = "9").extra(where=["LENGTH(length) = 4"])) #COMPLETE SONG LENGTH CHART LATER
+        songs_length_nine_to_ten = len(Song.objects.filter( length__startswith = "9").extra(where=["LENGTH(length) = 4"])) 
+        songs_length_ten_to_twenty = len(Song.objects.filter( length__startswith = "1").extra(where=["LENGTH(length) = 5"]))
+        songs_length_twenty_to_thirty = len(Song.objects.filter( length__startswith = "2").extra(where=["LENGTH(length) = 5"]))
 
 
     except Song.DoesNotExist:
@@ -218,7 +220,9 @@ def statistics(request):
         'songs_length_six_to_seven': songs_length_six_to_seven,
         'songs_length_seven_to_eight': songs_length_seven_to_eight,
         'songs_length_eight_to_nine': songs_length_eight_to_nine,
-        'songs_length_nine_to_ten': songs_length_nine_to_ten #COMPLETE SONG CHART LATER
+        'songs_length_nine_to_ten': songs_length_nine_to_ten,
+        'songs_length_ten_to_twenty': songs_length_ten_to_twenty,
+        'songs_length_twenty_to_thirty': songs_length_twenty_to_thirty
 
 
     })
