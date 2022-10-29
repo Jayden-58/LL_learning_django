@@ -156,6 +156,18 @@ def statistics(request):
         publishers_10s = len(Publisher.objects.filter(date_founded__startswith = "201"))
         publishers_20s = len(Publisher.objects.filter(date_founded__startswith = "202"))
 
+        #Song length data
+        songs_length_under_minute = len(Song.objects.filter( length__startswith = "0").extra(where=["LENGTH(length) = 4"]))
+        songs_length_one_to_two = len(Song.objects.filter( length__startswith = "1").extra(where=["LENGTH(length) = 4"]))
+        songs_length_two_to_three = len(Song.objects.filter( length__startswith = "2").extra(where=["LENGTH(length) = 4"]))
+        songs_length_three_to_four = len(Song.objects.filter( length__startswith = "3").extra(where=["LENGTH(length) = 4"]))
+        songs_length_four_to_five = len(Song.objects.filter( length__startswith = "4").extra(where=["LENGTH(length) = 4"]))
+        songs_length_five_to_six = len(Song.objects.filter( length__startswith = "5").extra(where=["LENGTH(length) = 4"]))
+        songs_length_six_to_seven = len(Song.objects.filter( length__startswith = "6").extra(where=["LENGTH(length) = 4"]))
+        songs_length_seven_to_eight = len(Song.objects.filter( length__startswith = "7").extra(where=["LENGTH(length) = 4"]))
+        songs_length_eight_to_nine = len(Song.objects.filter( length__startswith = "8").extra(where=["LENGTH(length) = 4"]))
+        songs_length_nine_to_ten = len(Song.objects.filter( length__startswith = "9").extra(where=["LENGTH(length) = 4"])) #COMPLETE SONG LENGTH CHART LATER
+
 
     except Song.DoesNotExist:
         raise Http404('data not found')
@@ -196,7 +208,17 @@ def statistics(request):
         'publishers_90s': publishers_90s,
         'publishers_00s': publishers_00s,
         'publishers_10s': publishers_10s,
-        'publishers_20s': publishers_20s
+        'publishers_20s': publishers_20s,
+        'songs_length_under_minute': songs_length_under_minute,
+        'songs_length_one_to_two': songs_length_one_to_two,
+        'songs_length_two_to_three': songs_length_two_to_three,
+        'songs_length_three_to_four': songs_length_three_to_four,
+        'songs_length_four_to_five': songs_length_four_to_five,
+        'songs_length_five_to_six': songs_length_five_to_six,
+        'songs_length_six_to_seven': songs_length_six_to_seven,
+        'songs_length_seven_to_eight': songs_length_seven_to_eight,
+        'songs_length_eight_to_nine': songs_length_eight_to_nine,
+        'songs_length_nine_to_ten': songs_length_nine_to_ten #COMPLETE SONG CHART LATER
 
 
     })
