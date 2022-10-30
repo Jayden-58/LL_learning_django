@@ -23,8 +23,12 @@
         <canvas id="publisherDateChart"></canvas>
     </div>
     <h2 style="text-align: center;">Song Lengths:</h2>
-    <div id = "date-bar-chart">
+    <div id = "length-bar-chart">
         <canvas id="songLengthChart"></canvas>
+    </div>
+    <h2 style="text-align: center;">Song Titles: (working but needs color change)</h2>
+    <div id = "song-alphabet-chart">
+        <canvas id="songAlphabetChart"></canvas>
     </div>
 
 
@@ -246,6 +250,64 @@
         },
         };
     </script>
+    <script>
+        //SONG ALPHABET CHART
+        const songAlphabetLabels = ["A", "B", "C", "D", "E","F","G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        const songAlphabetData = {
+        labels: songAlphabetLabels,
+        datasets: [{
+            label: 'Songs',
+            data: ["{{songs_a}}", "{{songs_b}}", "{{songs_c}}", "{{songs_d}}", "{{songs_e}}", "{{songs_f}}", "{{songs_g}}", "{{songs_h}}", "{{songs_i}}", "{{songs_j}}", "{{songs_k}}", "{{songs_l}}", "{{songs_m}}", "{{songs_n}}", "{{songs_o}}", "{{songs_p}}", "{{songs_q}}", "{{songs_r}}", "{{songs_s}}", "{{songs_t}}", "{{songs_u}}", "{{songs_v}}", "{{songs_w}}", "{{songs_x}}", "{{songs_y}}", "{{songs_z}}"],
+            backgroundColor: [
+            'rgba(55, 113, 32, 0.4)',
+            'rgba(59, 121, 35, 0.4)',
+            'rgba(62, 129, 37, 0.4)',
+            'rgba(66, 137, 39, 0.4)',
+            'rgba(70, 144, 41, 0.4)',
+            'rgba(74, 152, 44, 0.4)',
+            'rgba(78, 160, 46, 0.4)',
+            'rgba(82, 168, 48, 0.4)',
+            'rgba(85, 176, 50, 0.4)',
+            'rgba(89, 184, 53, 0.4)',
+            'rgba(93, 192, 55, 0.4)',
+            'rgba(97, 199, 58, 0.4)',
+            'rgba(104, 201, 66, 0.4)',
+            'rgba(110, 203, 74, 0.4)',
+            'rgba(116, 205, 82, 0.4)',
+            ],
+            borderColor: [
+            'rgba(55, 113, 32, 0.9)',
+            'rgba(59, 121, 35, 0.9)',
+            'rgba(62, 129, 37, 0.9)',
+            'rgba(66, 137, 39, 0.9)',
+            'rgba(70, 144, 41, 0.9)',
+            'rgba(74, 152, 44, 0.9)',
+            'rgba(78, 160, 46, 0.9)',
+            'rgba(82, 168, 48, 0.9)',
+            'rgba(85, 176, 50, 0.9)',
+            'rgba(89, 184, 53, 0.9)',
+            'rgba(93, 192, 55, 0.9)',
+            'rgba(97, 199, 58, 0.9)',
+            'rgba(104, 201, 66, 0.9)',
+            'rgba(110, 203, 74, 0.9)',
+            'rgba(116, 205, 82, 0.9)',
+            ],
+            borderWidth: 1,
+        }]
+        };
+
+        const songAlphabetConfig = {
+        type: 'bar',
+        data: songAlphabetData,
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        },
+        };
+    </script>
     
     <script>
         const countryChart = new Chart(
@@ -269,6 +331,12 @@
         const songLengthChart = new Chart(
           document.getElementById('songLengthChart'),
           songLengthConfig
+        );
+    </script>
+    <script>
+        const songAlphabetChart = new Chart(
+          document.getElementById('songAlphabetChart'),
+          songAlphabetConfig
         );
     </script>
       

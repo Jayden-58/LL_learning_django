@@ -170,6 +170,34 @@ def statistics(request):
         songs_length_ten_to_twenty = len(Song.objects.filter( length__startswith = "1").extra(where=["LENGTH(length) = 5"]))
         songs_length_twenty_to_thirty = len(Song.objects.filter( length__startswith = "2").extra(where=["LENGTH(length) = 5"]))
 
+        #Song Alphabet Data
+        songs_a = len(Song.objects.filter(title__startswith = "a"))
+        songs_b = len(Song.objects.filter(title__startswith = "b"))
+        songs_c = len(Song.objects.filter(title__startswith = "c"))
+        songs_d = len(Song.objects.filter(title__startswith = "d"))
+        songs_e = len(Song.objects.filter(title__startswith = "e"))
+        songs_f = len(Song.objects.filter(title__startswith = "f"))
+        songs_g = len(Song.objects.filter(title__startswith = "g"))
+        songs_h = len(Song.objects.filter(title__startswith = "h"))
+        songs_i = len(Song.objects.filter(title__startswith = "i"))
+        songs_j = len(Song.objects.filter(title__startswith = "j"))
+        songs_k = len(Song.objects.filter(title__startswith = "k"))
+        songs_l = len(Song.objects.filter(title__startswith = "l"))
+        songs_m = len(Song.objects.filter(title__startswith = "m"))
+        songs_n = len(Song.objects.filter(title__startswith = "n"))
+        songs_o = len(Song.objects.filter(title__startswith = "o"))
+        songs_p = len(Song.objects.filter(title__startswith = "p"))
+        songs_q = len(Song.objects.filter(title__startswith = "q"))
+        songs_r = len(Song.objects.filter(title__startswith = "r"))
+        songs_s = len(Song.objects.filter(title__startswith = "s"))
+        songs_t = len(Song.objects.filter(title__startswith = "t"))
+        songs_u = len(Song.objects.filter(title__startswith = "u"))
+        songs_v = len(Song.objects.filter(title__startswith = "v"))
+        songs_w = len(Song.objects.filter(title__startswith = "w"))
+        songs_x = len(Song.objects.filter(title__startswith = "x"))
+        songs_y = len(Song.objects.filter(title__startswith = "y"))
+        songs_z = len(Song.objects.filter(title__startswith = "z"))
+
 
     except Song.DoesNotExist:
         raise Http404('data not found')
@@ -186,7 +214,6 @@ def statistics(request):
         'albums_jp': albums_jp,
         'albums_au': albums_au,
         'albums_other': albums_other,
-
         'albums_40s': albums_40s,
         'albums_50s': albums_50s,
         'albums_60s': albums_60s,
@@ -222,7 +249,33 @@ def statistics(request):
         'songs_length_eight_to_nine': songs_length_eight_to_nine,
         'songs_length_nine_to_ten': songs_length_nine_to_ten,
         'songs_length_ten_to_twenty': songs_length_ten_to_twenty,
-        'songs_length_twenty_to_thirty': songs_length_twenty_to_thirty
+        'songs_length_twenty_to_thirty': songs_length_twenty_to_thirty,
+        'songs_a': songs_a,
+        'songs_b': songs_b,
+        'songs_c': songs_c,
+        'songs_d': songs_d,
+        'songs_e': songs_e,
+        'songs_f': songs_f,
+        'songs_g': songs_g,
+        'songs_h': songs_h,
+        'songs_i': songs_i,
+        'songs_j': songs_j,
+        'songs_k': songs_k,
+        'songs_l': songs_l,
+        'songs_m': songs_m,
+        'songs_n': songs_n,
+        'songs_o': songs_o,
+        'songs_p': songs_p,
+        'songs_q': songs_q,
+        'songs_r': songs_r,
+        'songs_s': songs_s,
+        'songs_t': songs_t,
+        'songs_u': songs_u,
+        'songs_v': songs_v,
+        'songs_w': songs_w,
+        'songs_x': songs_x,
+        'songs_y': songs_y,
+        'songs_z': songs_z
 
 
     })
