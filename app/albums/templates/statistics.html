@@ -30,7 +30,10 @@
     <div id = "song-alphabet-chart">
         <canvas id="songAlphabetChart"></canvas>
     </div>
-
+    <h2 style="text-align: center;">Album Titles: (working but needs color change)</h2>
+    <div id = "album-alphabet-chart">
+        <canvas id="albumAlphabetChart"></canvas>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -308,7 +311,64 @@
         },
         };
     </script>
-    
+     <script>
+        //ALBUM ALPHABET CHART
+        const albumAlphabetLabels = ["A", "B", "C", "D", "E","F","G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        const albumAlphabetData = {
+        labels: albumAlphabetLabels,
+        datasets: [{
+            label: 'albums',
+            data: ["{{albums_a}}", "{{albums_b}}", "{{albums_c}}", "{{albums_d}}", "{{albums_e}}", "{{albums_f}}", "{{albums_g}}", "{{albums_h}}", "{{albums_i}}", "{{albums_j}}", "{{albums_k}}", "{{albums_l}}", "{{albums_m}}", "{{albums_n}}", "{{albums_o}}", "{{albums_p}}", "{{albums_q}}", "{{albums_r}}", "{{albums_s}}", "{{albums_t}}", "{{albums_u}}", "{{albums_v}}", "{{albums_w}}", "{{albums_x}}", "{{albums_y}}", "{{albums_z}}"],
+            backgroundColor: [
+            'rgba(55, 113, 32, 0.4)',
+            'rgba(59, 121, 35, 0.4)',
+            'rgba(62, 129, 37, 0.4)',
+            'rgba(66, 137, 39, 0.4)',
+            'rgba(70, 144, 41, 0.4)',
+            'rgba(74, 152, 44, 0.4)',
+            'rgba(78, 160, 46, 0.4)',
+            'rgba(82, 168, 48, 0.4)',
+            'rgba(85, 176, 50, 0.4)',
+            'rgba(89, 184, 53, 0.4)',
+            'rgba(93, 192, 55, 0.4)',
+            'rgba(97, 199, 58, 0.4)',
+            'rgba(104, 201, 66, 0.4)',
+            'rgba(110, 203, 74, 0.4)',
+            'rgba(116, 205, 82, 0.4)',
+            ],
+            borderColor: [
+            'rgba(55, 113, 32, 0.9)',
+            'rgba(59, 121, 35, 0.9)',
+            'rgba(62, 129, 37, 0.9)',
+            'rgba(66, 137, 39, 0.9)',
+            'rgba(70, 144, 41, 0.9)',
+            'rgba(74, 152, 44, 0.9)',
+            'rgba(78, 160, 46, 0.9)',
+            'rgba(82, 168, 48, 0.9)',
+            'rgba(85, 176, 50, 0.9)',
+            'rgba(89, 184, 53, 0.9)',
+            'rgba(93, 192, 55, 0.9)',
+            'rgba(97, 199, 58, 0.9)',
+            'rgba(104, 201, 66, 0.9)',
+            'rgba(110, 203, 74, 0.9)',
+            'rgba(116, 205, 82, 0.9)',
+            ],
+            borderWidth: 1,
+        }]
+        };
+
+        const albumAlphabetConfig = {
+        type: 'bar',
+        data: albumAlphabetData,
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        },
+        };
+    </script>
     <script>
         const countryChart = new Chart(
           document.getElementById('countryChart'),
@@ -337,6 +397,12 @@
         const songAlphabetChart = new Chart(
           document.getElementById('songAlphabetChart'),
           songAlphabetConfig
+        );
+    </script>
+    <script>
+        const albumAlphabetChart = new Chart(
+          document.getElementById('albumAlphabetChart'),
+          albumAlphabetConfig
         );
     </script>
       

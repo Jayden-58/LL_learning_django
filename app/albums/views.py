@@ -198,6 +198,34 @@ def statistics(request):
         songs_y = len(Song.objects.filter(title__startswith = "y"))
         songs_z = len(Song.objects.filter(title__startswith = "z"))
 
+        #Album alphabet data
+        albums_a = len(Album.objects.filter(title__startswith = "a"))
+        albums_b = len(Album.objects.filter(title__startswith = "b"))
+        albums_c = len(Album.objects.filter(title__startswith = "c"))
+        albums_d = len(Album.objects.filter(title__startswith = "d"))
+        albums_e = len(Album.objects.filter(title__startswith = "e"))
+        albums_f = len(Album.objects.filter(title__startswith = "f"))
+        albums_g = len(Album.objects.filter(title__startswith = "g"))
+        albums_h = len(Album.objects.filter(title__startswith = "h"))
+        albums_i = len(Album.objects.filter(title__startswith = "i"))
+        albums_j = len(Album.objects.filter(title__startswith = "j"))
+        albums_k = len(Album.objects.filter(title__startswith = "k"))
+        albums_l = len(Album.objects.filter(title__startswith = "l"))
+        albums_m = len(Album.objects.filter(title__startswith = "m"))
+        albums_n = len(Album.objects.filter(title__startswith = "n"))
+        albums_o = len(Album.objects.filter(title__startswith = "o"))
+        albums_p = len(Album.objects.filter(title__startswith = "p"))
+        albums_q = len(Album.objects.filter(title__startswith = "q"))
+        albums_r = len(Album.objects.filter(title__startswith = "r"))
+        albums_s = len(Album.objects.filter(title__startswith = "s"))
+        albums_t = len(Album.objects.filter(title__startswith = "t"))
+        albums_u = len(Album.objects.filter(title__startswith = "u"))
+        albums_v = len(Album.objects.filter(title__startswith = "v"))
+        albums_w = len(Album.objects.filter(title__startswith = "w"))
+        albums_x = len(Album.objects.filter(title__startswith = "x"))
+        albums_y = len(Album.objects.filter(title__startswith = "y"))
+        albums_z = len(Album.objects.filter(title__startswith = "z"))
+
 
     except Song.DoesNotExist:
         raise Http404('data not found')
@@ -275,7 +303,33 @@ def statistics(request):
         'songs_w': songs_w,
         'songs_x': songs_x,
         'songs_y': songs_y,
-        'songs_z': songs_z
+        'songs_z': songs_z,
+        'albums_a': albums_a,
+        'albums_b': albums_b,
+        'albums_c': albums_c,
+        'albums_d': albums_d,
+        'albums_e': albums_e,
+        'albums_f': albums_f,
+        'albums_g': albums_g,
+        'albums_h': albums_h,
+        'albums_i': albums_i,
+        'albums_j': albums_j,
+        'albums_k': albums_k,
+        'albums_l': albums_l,
+        'albums_m': albums_m,
+        'albums_n': albums_n,
+        'albums_o': albums_o,
+        'albums_p': albums_p,
+        'albums_q': albums_q,
+        'albums_r': albums_r,
+        'albums_s': albums_s,
+        'albums_t': albums_t,
+        'albums_u': albums_u,
+        'albums_v': albums_v,
+        'albums_w': albums_w,
+        'albums_x': albums_x,
+        'albums_y': albums_y,
+        'albums_z': albums_z
 
 
     })
