@@ -226,6 +226,33 @@ def statistics(request):
         albums_y = len(Album.objects.filter(title__startswith = "y"))
         albums_z = len(Album.objects.filter(title__startswith = "z"))
 
+        #Artist alphabet data
+        artists_a = len(Artist.objects.filter(first_name__startswith = "a"))
+        artists_b = len(Artist.objects.filter(first_name__startswith = "b"))
+        artists_c = len(Artist.objects.filter(first_name__startswith = "c"))
+        artists_d = len(Artist.objects.filter(first_name__startswith = "d"))
+        artists_e = len(Artist.objects.filter(first_name__startswith = "e"))
+        artists_f = len(Artist.objects.filter(first_name__startswith = "f"))
+        artists_g = len(Artist.objects.filter(first_name__startswith = "g"))
+        artists_h = len(Artist.objects.filter(first_name__startswith = "h"))
+        artists_i = len(Artist.objects.filter(first_name__startswith = "i"))
+        artists_j = len(Artist.objects.filter(first_name__startswith = "j"))
+        artists_k = len(Artist.objects.filter(first_name__startswith = "k"))
+        artists_l = len(Artist.objects.filter(first_name__startswith = "l"))
+        artists_m = len(Artist.objects.filter(first_name__startswith = "m"))
+        artists_n = len(Artist.objects.filter(first_name__startswith = "n"))
+        artists_o = len(Artist.objects.filter(first_name__startswith = "o"))
+        artists_p = len(Artist.objects.filter(first_name__startswith = "p"))
+        artists_q = len(Artist.objects.filter(first_name__startswith = "q"))
+        artists_r = len(Artist.objects.filter(first_name__startswith = "r"))
+        artists_s = len(Artist.objects.filter(first_name__startswith = "s"))
+        artists_t = len(Artist.objects.filter(first_name__startswith = "t"))
+        artists_u = len(Artist.objects.filter(first_name__startswith = "u"))
+        artists_v = len(Artist.objects.filter(first_name__startswith = "v"))
+        artists_w = len(Artist.objects.filter(first_name__startswith = "w"))
+        artists_x = len(Artist.objects.filter(first_name__startswith = "x"))
+        artists_y = len(Artist.objects.filter(first_name__startswith = "y"))
+        artists_z = len(Artist.objects.filter(first_name__startswith = "z"))
 
     except Song.DoesNotExist:
         raise Http404('data not found')
@@ -329,7 +356,33 @@ def statistics(request):
         'albums_w': albums_w,
         'albums_x': albums_x,
         'albums_y': albums_y,
-        'albums_z': albums_z
+        'albums_z': albums_z,
+        'artists_a': artists_a,
+        'artists_b': artists_b,
+        'artists_c': artists_c,
+        'artists_d': artists_d,
+        'artists_e': artists_e,
+        'artists_f': artists_f,
+        'artists_g': artists_g,
+        'artists_h': artists_h,
+        'artists_i': artists_i,
+        'artists_j': artists_j,
+        'artists_k': artists_k,
+        'artists_l': artists_l,
+        'artists_m': artists_m,
+        'artists_n': artists_n,
+        'artists_o': artists_o,
+        'artists_p': artists_p,
+        'artists_q': artists_q,
+        'artists_r': artists_r,
+        'artists_s': artists_s,
+        'artists_t': artists_t,
+        'artists_u': artists_u,
+        'artists_v': artists_v,
+        'artists_w': artists_w,
+        'artists_x': artists_x,
+        'artists_y': artists_y,
+        'artists_z': artists_z
 
 
-    })
+})

@@ -42,6 +42,12 @@
                 <canvas id="albumAlphabetChart"></canvas>
             </div>
         </div>
+        <div class = "chart-single-container">
+            <h2>Artist Name:</h2>
+            <div id = "artist-alphabet-chart">
+                <canvas id="artistAlphabetChart"></canvas>
+            </div>
+        </div>
     </div>
     <div class = "chart-single-container" id = "country-pi-chart-container">
         <h2>Countries:</h2>
@@ -428,6 +434,86 @@
         };
     </script>
     <script>
+        //ARTIST ALPHABET CHART
+        const artistAlphabetLabels = ["A", "B", "C", "D", "E","F","G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        const artistAlphabetData = {
+        labels: artistAlphabetLabels,
+        datasets: [{
+            label: 'artists',
+            data: ["{{artists_a}}", "{{artists_b}}", "{{artists_c}}", "{{artists_d}}", "{{artists_e}}", "{{artists_f}}", "{{artists_g}}", "{{artists_h}}", "{{artists_i}}", "{{artists_j}}", "{{artists_k}}", "{{artists_l}}", "{{artists_m}}", "{{artists_n}}", "{{artists_o}}", "{{artists_p}}", "{{artists_q}}", "{{artists_r}}", "{{artists_s}}", "{{artists_t}}", "{{artists_u}}", "{{artists_v}}", "{{artists_w}}", "{{artists_x}}", "{{artists_y}}", "{{artists_z}}"],
+            backgroundColor: [
+            'rgb(55, 112, 32, 0.4)',
+            'rgb(58, 120, 34, 0.4)',
+            'rgb(62, 127, 36, 0.4)',
+            'rgb(65, 134, 38, 0.4)',
+            'rgb(70, 144, 41, 0.4)',
+            'rgb(69, 141, 40, 0.4)',
+            'rgb(72, 149, 43, 0.4)',
+            'rgb(76, 156, 45, 0.4)',
+            'rgb(79, 163, 47, 0.4)',
+            'rgb(83, 171, 49, 0.4)',
+            'rgb(86, 178, 51, 0.4)',
+            'rgb(90, 185, 53, 0.4)',
+            'rgb(94, 193, 55, 0.4)',
+            'rgb(97, 199, 58, 0.4)',
+            'rgb(103, 201, 65, 0.4)',
+            'rgb(109, 203, 73, 0.4)',
+            'rgb(115, 205, 80, 0.4)',
+            'rgb(121, 207, 87, 0.4)',
+            'rgb(127, 209, 95, 0.4)',
+            'rgb(132, 211, 102, 0.4)',
+            'rgb(138, 213, 109, 0.4)',
+            'rgb(144, 215, 116, 0.4)',
+            'rgb(150, 218, 124, 0.4)',
+            'rgb(156, 220, 131, 0.4)',
+            'rgb(162, 222, 138, 0.4)',
+            'rgb(168, 224, 146, 0.4)',
+            ],
+            borderColor: [
+            'rgb(55, 112, 32, 0.9)',
+            'rgb(58, 120, 34, 0.9)',
+            'rgb(62, 127, 36, 0.9)',
+            'rgb(65, 134, 38, 0.9)',
+            'rgb(70, 144, 41, 0.9)',
+            'rgb(69, 141, 40, 0.9)',
+            'rgb(72, 149, 43, 0.9)',
+            'rgb(76, 156, 45, 0.9)',
+            'rgb(79, 163, 47, 0.9)',
+            'rgb(83, 171, 49, 0.9)',
+            'rgb(86, 178, 51, 0.9)',
+            'rgb(90, 185, 53, 0.9)',
+            'rgb(94, 193, 55, 0.9)',
+            'rgb(97, 199, 58, 0.9)',
+            'rgb(103, 201, 65, 0.9)',
+            'rgb(109, 203, 73, 0.9)',
+            'rgb(115, 205, 80, 0.9)',
+            'rgb(121, 207, 87, 0.9)',
+            'rgb(127, 209, 95, 0.9)',
+            'rgb(132, 211, 102, 0.9)',
+            'rgb(138, 213, 109, 0.9)',
+            'rgb(144, 215, 116, 0.9)',
+            'rgb(150, 218, 124, 0.9)',
+            'rgb(156, 220, 131, 0.9)',
+            'rgb(162, 222, 138, 0.9)',
+            'rgb(168, 224, 146, 0.9)',
+            ],
+            borderWidth: 1,
+        }]
+        };
+
+        const artistAlphabetConfig = {
+        type: 'bar',
+        data: artistAlphabetData,
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        },
+        };
+    </script>
+    <script>
         const countryChart = new Chart(
           document.getElementById('countryChart'),
           countryChartConfig
@@ -461,6 +547,12 @@
         const albumAlphabetChart = new Chart(
           document.getElementById('albumAlphabetChart'),
           albumAlphabetConfig
+        );
+    </script>
+    <script>
+        const artistAlphabetChart = new Chart(
+          document.getElementById('artistAlphabetChart'),
+          artistAlphabetConfig
         );
     </script>
       
