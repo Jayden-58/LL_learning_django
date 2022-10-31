@@ -4,37 +4,51 @@
     <div class = "page-title-container">
         <h1 class = "page-title" style = "text-align: center;">Statistics</h1>
     </div>
-    <h2 class = "big-stats">Album Amount: {{albums_amount}}</h2>
-    <h2 class = "big-stats">Song Amount: {{songs_amount}}</h2>
-    <h2 class = "big-stats">Publisher Amount: {{publishers_amount}}</h2>
-    <h2 class = "big-stats">Artist Amount: {{artists_amount}}</h2>
-
+    <span class = "big-stats-container">
+        <h2 class = "big-stats">Album Amount: {{albums_amount}}</h2>
+        <h2 class = "big-stats">Song Amount: {{songs_amount}}</h2>
+        <h2 class = "big-stats">Publisher Amount: {{publishers_amount}}</h2>
+        <h2 class = "big-stats">Artist Amount: {{artists_amount}}</h2>
+    </span>
     <!--chart.js stuff-->
-    <h2 style="text-align: center;">Countries:</h2>
-    <div id = "country-pi-chart">
-        <canvas id="countryChart"></canvas>
+    <div class = "chart-container">
+        <div class = "chart-single-container">
+            <h2>Album Decades:</h2>
+            <div id = "date-bar-chart">
+                <canvas id="dateChart"></canvas>
+            </div>
+        </div>
+        <div class = "chart-single-container">
+            <h2>Publisher Decades:</h2>
+            <div id = "date-bar-chart">
+                <canvas id="publisherDateChart"></canvas>
+            </div>
+        </div>
+        <div class = "chart-single-container">
+            <h2>Song Lengths:</h2>
+            <div id = "length-bar-chart">
+                <canvas id="songLengthChart"></canvas>
+            </div>
+        </div>
+        <div class = "chart-single-container">
+            <h2>Song Titles:</h2>
+            <div id = "song-alphabet-chart">
+                <canvas id="songAlphabetChart"></canvas>
+            </div>
+        </div>
+        <div class = "chart-single-container">
+            <h2>Album Titles:</h2>
+            <div id = "album-alphabet-chart">
+                <canvas id="albumAlphabetChart"></canvas>
+            </div>
+        </div>
     </div>
-    <h2 style="text-align: center;">AlbumDecades:</h2>
-    <div id = "date-bar-chart">
-        <canvas id="dateChart"></canvas>
+    <div class = "chart-single-container" id = "country-pi-chart-container">
+        <h2>Countries:</h2>
+        <div id = "country-pi-chart">
+            <canvas id="countryChart"></canvas>
+        </div>
     </div>
-    <h2 style="text-align: center;">Publisher Decades:</h2>
-    <div id = "date-bar-chart">
-        <canvas id="publisherDateChart"></canvas>
-    </div>
-    <h2 style="text-align: center;">Song Lengths:</h2>
-    <div id = "length-bar-chart">
-        <canvas id="songLengthChart"></canvas>
-    </div>
-    <h2 style="text-align: center;">Song Titles: (working but needs color change)</h2>
-    <div id = "song-alphabet-chart">
-        <canvas id="songAlphabetChart"></canvas>
-    </div>
-    <h2 style="text-align: center;">Album Titles: (working but needs color change)</h2>
-    <div id = "album-alphabet-chart">
-        <canvas id="albumAlphabetChart"></canvas>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         //ALBUM COUNTRY CHART
@@ -262,38 +276,60 @@
             label: 'Songs',
             data: ["{{songs_a}}", "{{songs_b}}", "{{songs_c}}", "{{songs_d}}", "{{songs_e}}", "{{songs_f}}", "{{songs_g}}", "{{songs_h}}", "{{songs_i}}", "{{songs_j}}", "{{songs_k}}", "{{songs_l}}", "{{songs_m}}", "{{songs_n}}", "{{songs_o}}", "{{songs_p}}", "{{songs_q}}", "{{songs_r}}", "{{songs_s}}", "{{songs_t}}", "{{songs_u}}", "{{songs_v}}", "{{songs_w}}", "{{songs_x}}", "{{songs_y}}", "{{songs_z}}"],
             backgroundColor: [
-            'rgba(55, 113, 32, 0.4)',
-            'rgba(59, 121, 35, 0.4)',
-            'rgba(62, 129, 37, 0.4)',
-            'rgba(66, 137, 39, 0.4)',
-            'rgba(70, 144, 41, 0.4)',
-            'rgba(74, 152, 44, 0.4)',
-            'rgba(78, 160, 46, 0.4)',
-            'rgba(82, 168, 48, 0.4)',
-            'rgba(85, 176, 50, 0.4)',
-            'rgba(89, 184, 53, 0.4)',
-            'rgba(93, 192, 55, 0.4)',
-            'rgba(97, 199, 58, 0.4)',
-            'rgba(104, 201, 66, 0.4)',
-            'rgba(110, 203, 74, 0.4)',
-            'rgba(116, 205, 82, 0.4)',
+            'rgb(55, 112, 32, 0.4)',
+            'rgb(58, 120, 34, 0.4)',
+            'rgb(62, 127, 36, 0.4)',
+            'rgb(65, 134, 38, 0.4)',
+            'rgb(70, 144, 41, 0.4)',
+            'rgb(69, 141, 40, 0.4)',
+            'rgb(72, 149, 43, 0.4)',
+            'rgb(76, 156, 45, 0.4)',
+            'rgb(79, 163, 47, 0.4)',
+            'rgb(83, 171, 49, 0.4)',
+            'rgb(86, 178, 51, 0.4)',
+            'rgb(90, 185, 53, 0.4)',
+            'rgb(94, 193, 55, 0.4)',
+            'rgb(97, 199, 58, 0.4)',
+            'rgb(103, 201, 65, 0.4)',
+            'rgb(109, 203, 73, 0.4)',
+            'rgb(115, 205, 80, 0.4)',
+            'rgb(121, 207, 87, 0.4)',
+            'rgb(127, 209, 95, 0.4)',
+            'rgb(132, 211, 102, 0.4)',
+            'rgb(138, 213, 109, 0.4)',
+            'rgb(144, 215, 116, 0.4)',
+            'rgb(150, 218, 124, 0.4)',
+            'rgb(156, 220, 131, 0.4)',
+            'rgb(162, 222, 138, 0.4)',
+            'rgb(168, 224, 146, 0.4)',
             ],
             borderColor: [
-            'rgba(55, 113, 32, 0.9)',
-            'rgba(59, 121, 35, 0.9)',
-            'rgba(62, 129, 37, 0.9)',
-            'rgba(66, 137, 39, 0.9)',
-            'rgba(70, 144, 41, 0.9)',
-            'rgba(74, 152, 44, 0.9)',
-            'rgba(78, 160, 46, 0.9)',
-            'rgba(82, 168, 48, 0.9)',
-            'rgba(85, 176, 50, 0.9)',
-            'rgba(89, 184, 53, 0.9)',
-            'rgba(93, 192, 55, 0.9)',
-            'rgba(97, 199, 58, 0.9)',
-            'rgba(104, 201, 66, 0.9)',
-            'rgba(110, 203, 74, 0.9)',
-            'rgba(116, 205, 82, 0.9)',
+            'rgb(55, 112, 32, 0.9)',
+            'rgb(58, 120, 34, 0.9)',
+            'rgb(62, 127, 36, 0.9)',
+            'rgb(65, 134, 38, 0.9)',
+            'rgb(70, 144, 41, 0.9)',
+            'rgb(69, 141, 40, 0.9)',
+            'rgb(72, 149, 43, 0.9)',
+            'rgb(76, 156, 45, 0.9)',
+            'rgb(79, 163, 47, 0.9)',
+            'rgb(83, 171, 49, 0.9)',
+            'rgb(86, 178, 51, 0.9)',
+            'rgb(90, 185, 53, 0.9)',
+            'rgb(94, 193, 55, 0.9)',
+            'rgb(97, 199, 58, 0.9)',
+            'rgb(103, 201, 65, 0.9)',
+            'rgb(109, 203, 73, 0.9)',
+            'rgb(115, 205, 80, 0.9)',
+            'rgb(121, 207, 87, 0.9)',
+            'rgb(127, 209, 95, 0.9)',
+            'rgb(132, 211, 102, 0.9)',
+            'rgb(138, 213, 109, 0.9)',
+            'rgb(144, 215, 116, 0.9)',
+            'rgb(150, 218, 124, 0.9)',
+            'rgb(156, 220, 131, 0.9)',
+            'rgb(162, 222, 138, 0.9)',
+            'rgb(168, 224, 146, 0.9)',
             ],
             borderWidth: 1,
         }]
@@ -320,38 +356,60 @@
             label: 'albums',
             data: ["{{albums_a}}", "{{albums_b}}", "{{albums_c}}", "{{albums_d}}", "{{albums_e}}", "{{albums_f}}", "{{albums_g}}", "{{albums_h}}", "{{albums_i}}", "{{albums_j}}", "{{albums_k}}", "{{albums_l}}", "{{albums_m}}", "{{albums_n}}", "{{albums_o}}", "{{albums_p}}", "{{albums_q}}", "{{albums_r}}", "{{albums_s}}", "{{albums_t}}", "{{albums_u}}", "{{albums_v}}", "{{albums_w}}", "{{albums_x}}", "{{albums_y}}", "{{albums_z}}"],
             backgroundColor: [
-            'rgba(55, 113, 32, 0.4)',
-            'rgba(59, 121, 35, 0.4)',
-            'rgba(62, 129, 37, 0.4)',
-            'rgba(66, 137, 39, 0.4)',
-            'rgba(70, 144, 41, 0.4)',
-            'rgba(74, 152, 44, 0.4)',
-            'rgba(78, 160, 46, 0.4)',
-            'rgba(82, 168, 48, 0.4)',
-            'rgba(85, 176, 50, 0.4)',
-            'rgba(89, 184, 53, 0.4)',
-            'rgba(93, 192, 55, 0.4)',
-            'rgba(97, 199, 58, 0.4)',
-            'rgba(104, 201, 66, 0.4)',
-            'rgba(110, 203, 74, 0.4)',
-            'rgba(116, 205, 82, 0.4)',
+            'rgb(55, 112, 32, 0.4)',
+            'rgb(58, 120, 34, 0.4)',
+            'rgb(62, 127, 36, 0.4)',
+            'rgb(65, 134, 38, 0.4)',
+            'rgb(70, 144, 41, 0.4)',
+            'rgb(69, 141, 40, 0.4)',
+            'rgb(72, 149, 43, 0.4)',
+            'rgb(76, 156, 45, 0.4)',
+            'rgb(79, 163, 47, 0.4)',
+            'rgb(83, 171, 49, 0.4)',
+            'rgb(86, 178, 51, 0.4)',
+            'rgb(90, 185, 53, 0.4)',
+            'rgb(94, 193, 55, 0.4)',
+            'rgb(97, 199, 58, 0.4)',
+            'rgb(103, 201, 65, 0.4)',
+            'rgb(109, 203, 73, 0.4)',
+            'rgb(115, 205, 80, 0.4)',
+            'rgb(121, 207, 87, 0.4)',
+            'rgb(127, 209, 95, 0.4)',
+            'rgb(132, 211, 102, 0.4)',
+            'rgb(138, 213, 109, 0.4)',
+            'rgb(144, 215, 116, 0.4)',
+            'rgb(150, 218, 124, 0.4)',
+            'rgb(156, 220, 131, 0.4)',
+            'rgb(162, 222, 138, 0.4)',
+            'rgb(168, 224, 146, 0.4)',
             ],
             borderColor: [
-            'rgba(55, 113, 32, 0.9)',
-            'rgba(59, 121, 35, 0.9)',
-            'rgba(62, 129, 37, 0.9)',
-            'rgba(66, 137, 39, 0.9)',
-            'rgba(70, 144, 41, 0.9)',
-            'rgba(74, 152, 44, 0.9)',
-            'rgba(78, 160, 46, 0.9)',
-            'rgba(82, 168, 48, 0.9)',
-            'rgba(85, 176, 50, 0.9)',
-            'rgba(89, 184, 53, 0.9)',
-            'rgba(93, 192, 55, 0.9)',
-            'rgba(97, 199, 58, 0.9)',
-            'rgba(104, 201, 66, 0.9)',
-            'rgba(110, 203, 74, 0.9)',
-            'rgba(116, 205, 82, 0.9)',
+            'rgb(55, 112, 32, 0.9)',
+            'rgb(58, 120, 34, 0.9)',
+            'rgb(62, 127, 36, 0.9)',
+            'rgb(65, 134, 38, 0.9)',
+            'rgb(70, 144, 41, 0.9)',
+            'rgb(69, 141, 40, 0.9)',
+            'rgb(72, 149, 43, 0.9)',
+            'rgb(76, 156, 45, 0.9)',
+            'rgb(79, 163, 47, 0.9)',
+            'rgb(83, 171, 49, 0.9)',
+            'rgb(86, 178, 51, 0.9)',
+            'rgb(90, 185, 53, 0.9)',
+            'rgb(94, 193, 55, 0.9)',
+            'rgb(97, 199, 58, 0.9)',
+            'rgb(103, 201, 65, 0.9)',
+            'rgb(109, 203, 73, 0.9)',
+            'rgb(115, 205, 80, 0.9)',
+            'rgb(121, 207, 87, 0.9)',
+            'rgb(127, 209, 95, 0.9)',
+            'rgb(132, 211, 102, 0.9)',
+            'rgb(138, 213, 109, 0.9)',
+            'rgb(144, 215, 116, 0.9)',
+            'rgb(150, 218, 124, 0.9)',
+            'rgb(156, 220, 131, 0.9)',
+            'rgb(162, 222, 138, 0.9)',
+            'rgb(168, 224, 146, 0.9)',
             ],
             borderWidth: 1,
         }]

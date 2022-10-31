@@ -115,20 +115,54 @@ table {
     opacity: 100%;
 }
 
+.big-stats-container{
+    display: flex;
+    justify-content: center;
+}
+
 .big-stats{
     text-align: center;
     margin: 1em;
 }
 
+.chart-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chart-single-container{
+    width: min-content;
+}
+
+.chart-single-container h2{
+    text-align: center;
+}
+
+#country-pi-chart-container{
+    padding-left: calc(50% - 20em);
+}
+
 #country-pi-chart{
-    width: 25em;
-    padding-left: calc(50% - 12.5em);
+    width: 40em;
+    
 }
 
 #date-bar-chart{
-    width: 25em;
-    padding-left: calc(50% - 12.5em);
+    width: 30em;
 }
+
+#length-bar-chart{
+    width: 30em;
+}
+
+#song-alphabet-chart{
+    width: 30em;
+}
+
+#album-alphabet-chart{
+    width: 30em;
+}
+
 
 
 
