@@ -5,10 +5,10 @@
         <h1 class = "page-title" style = "text-align: center;">Statistics</h1>
     </div>
     <span class = "big-stats-container">
-        <h2 class = "big-stats">Album Amount: {{albums_amount}}</h2>
-        <h2 class = "big-stats">Song Amount: {{songs_amount}}</h2>
-        <h2 class = "big-stats">Publisher Amount: {{publishers_amount}}</h2>
-        <h2 class = "big-stats">Artist Amount: {{artists_amount}}</h2>
+        <h2 class = "big-stats"><a href = "{% url 'all_albums' %}">Albums:</a> {{albums_amount}}</h2>
+        <h2 class = "big-stats"><a href = "{% url 'all_songs'%}">Songs:</a> {{songs_amount}}</h2>
+        <h2 class = "big-stats"><a href = "{% url 'all_publishers' %}">Publishers:</a> {{publishers_amount}}</h2>
+        <h2 class = "big-stats"><a href = "{% url 'all_artists' %}">Artists:</a> {{artists_amount}}</h2>
     </span>
     <!--chart.js stuff-->
     <div class = "chart-container">
