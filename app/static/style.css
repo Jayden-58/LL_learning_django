@@ -135,6 +135,8 @@ table {
 
 .chart-single-container{
     width: min-content;
+    margin: .5em;
+    margin-top: 1em;
 }
 
 .chart-single-container h2{
