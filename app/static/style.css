@@ -16,7 +16,7 @@ a:visited {
     color: darkgreen;
 }
 
-header {
+/*header {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
     height: 6em;
     text-align: center;
@@ -24,6 +24,7 @@ header {
     border: 1px solid hidden;
     padding-top: 1em;
 }
+*/
 
 
 .header-links {
