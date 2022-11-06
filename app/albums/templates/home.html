@@ -1,15 +1,54 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-        <h1 class = "page-title" style = "text-align: center; text-shadow: -1px 1px black;">Homepage</h1>
-        <section id = "homepage-links"> 
-            <a class = "homepage-button" href = "{% url 'all_albums' %}">All Albums</a>
-            <a class = "homepage-button" href = "{% url 'all_artists' %}">All Artists</a>
-            <a class = "homepage-button" href = "{% url 'all_publishers' %}">All Publishers</a>
-            <a class = "homepage-button" href ="{% url 'all_songs'%}">All Songs</a>
-            <a class = "homepage-button" href = "{% url 'random_album_detail' %}">Random Album</a>
-            <a class = "homepage-button" href = "{% url 'statistics' %}">Statistics</a>
-        </section>
-        <img id = "homepage-image" src = "{% static '/images/homepage/vinyl-records.jpg'  %}">
+        <div class = "container-fluid">
+            <div class = "row my-5">
+                <div class = "col text-center">
+                    <h1>Homepage (still need stats and random record button and links need to be set up)</h1>
+                </div>
+            </div>
+            <div class = "row d-flex mt-5">
+                <div class = "col-lg-3 col-md-6 col-sm">
+                    <div class="card mx-auto my-2" style="width: 18rem;">
+                        <img src="{% static '/images/homepage/vinyl-records.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">All Publishers</h5>
+                          <p class="card-text">Check out the publishers in Jayden's record collection.</p>
+                          <a href="#" class="btn btn-success">All Publishers</a>
+                        </div>
+                      </div>
+                </div>
+                <div class = "col-lg-3 col-md-6 col-sm">
+                    <div class="card mx-auto my-2" style="width: 18rem;">
+                        <img src="{% static '/images/homepage/vinyl_player_background_image.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">All Albums</h5>
+                          <p class="card-text">Check out the Albums in Jayden's record collection.</p>
+                          <a href="#" class="btn btn-success">All Albums</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-lg-3 col-md-6 col-sm">
+                    <div class="card mx-auto my-2" style="width: 18rem;">
+                        <img src="{% static '/images/homepage/vinyl-records.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">All Artists</h5>
+                          <p class="card-text">Check out the Artists in Jayden's record collection.</p>
+                          <a href="#" class="btn btn-success">All Artists</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-lg-3 col-md-6 col-sm">
+                    <div class="card mx-auto my-2" style="width: 18rem;">
+                        <img src="{% static '/images/homepage/vinyl_player_background_image.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">All Songs</h5>
+                          <p class="card-text">Check out the Artists in Jayden's record collection.</p>
+                          <a href="#" class="btn btn-success">All Songs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     {% endblock %}

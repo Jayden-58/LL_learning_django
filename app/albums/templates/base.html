@@ -7,31 +7,31 @@
 
 <body>
     <header class = "sticky-top">
-        <nav class = "navbar sticky-top navbar-expand-lg bg-dark">
+        <nav class = "navbar sticky-top navbar-expand-lg bg-dark" style = "min-height: 120px;">
             <div class = "container-fluid">
-                <a class = "navbar-brand" href = "{% url 'home' %}">Jayden's Record Database</a>
+                <a class = "navbar-brand mx-auto" href = "{% url 'home' %}">Jayden's Record Database</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
                     <ul class = "navbar-nav me-auto mb-2 mb-lg-0">
                         <li class = "nav item">
-                            <a class = "header-links" href="{% url 'all_albums' %}">All Albums</a>
+                            <a class = "header-links mx-5" href="{% url 'all_albums' %}">All Albums</a>
                         </li>
                         <li class = "nav item">
-                            <a class = "header-links" href="{% url 'all_artists' %}">All Artists</a>
+                            <a class = "header-links mx-5" href="{% url 'all_artists' %}">All Artists</a>
                         </li>
                         <li class = "nav item">
-                            <a class = "header-links" href="{% url 'all_publishers' %}">All Publishers</a>
+                            <a class = "header-links mx-5" href="{% url 'all_publishers' %}">All Publishers</a>
                         </li>
                         <li class = "nav item">
-                            <a class = "header-links" href="{% url 'all_songs'%}">All Songs</a>
+                            <a class = "header-links mx-5" href="{% url 'all_songs'%}">All Songs</a>
                         </li>
                         <li class = "nav item">
-                            <a class = "header-links" href = "{% url 'random_album_detail' %}">Random Album</a>
+                            <a class = "header-links mx-5" href = "{% url 'random_album_detail' %}">Random Album</a>
                         </li>
                         <li class = "nav item">
-                            <a class = "header-links" href = "{% url 'statistics' %}">Statistics</a>
+                            <a class = "header-links mx-5" href = "{% url 'statistics' %}">Statistics</a>
                         </li>
                     </ul>
                 </div>
