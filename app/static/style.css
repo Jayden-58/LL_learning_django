@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-a {
+/*a {
     color: rgb(16, 168, 16);
     text-decoration:none;
   }
@@ -15,7 +15,7 @@ a:hover {
 a:visited {
     color: darkgreen;
 }
-
+*/
 /*header {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
     height: 6em;
@@ -26,9 +26,8 @@ a:visited {
 }
 */
 
+/*
 
-.header-links {
-    text-decoration: none;
     margin: 1em;
     color: darkgreen;
     text-shadow: none;
@@ -40,6 +39,14 @@ a:visited {
 
 #header-links-group {
     margin-top: 1em;
+}
+*/
+.header-links {
+    text-decoration: none;
+}
+
+.header-links:hover {
+    text-decoration: underline;
 }
 
 table,
