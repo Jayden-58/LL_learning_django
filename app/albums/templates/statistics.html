@@ -8,13 +8,46 @@
                 <img class = "img-fluid my-2" style = "max-height: 25rem;" src = "{% static '\images\homepage\ivan-jermakov-N1I6IgDOGJs-unsplash.jpg' %}">
             </div>
         </div>
+        <div class = "row d-flex my-5">
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <img src="{% static '\images\homepage\alexey-ruban-73o_FzZ5x-w-unsplash.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body bg-light">
+                      <h5 class="card-title">Publishers</h5>
+                      <p class="card-text">{{publishers_amount}}</p>
+                    </div>
+                  </div>
+            </div>
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <img src="{% static '/images/homepage/vinyl-records.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body bg-light">
+                      <h5 class="card-title">Albums</h5>
+                      <p class="card-text">{{albums_amount}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <img src="{% static '\images\homepage\chris-ainsworth-7WfcHibcR3Y-unsplash.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body bg-light">
+                      <h5 class="card-title">Artists</h5>
+                      <p class="card-text">{{artists_amount}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <img src="{% static '/images/homepage/vinyl_player_background_image.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body bg-light">
+                      <h5 class="card-title">Songs</h5>
+                      <p class="card-text">{{songs_amount}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <span class = "big-stats-container">
-        <h2 class = "big-stats"><a href = "{% url 'all_albums' %}">Albums:</a> {{albums_amount}}</h2>
-        <h2 class = "big-stats"><a href = "{% url 'all_songs'%}">Songs:</a> {{songs_amount}}</h2>
-        <h2 class = "big-stats"><a href = "{% url 'all_publishers' %}">Publishers:</a> {{publishers_amount}}</h2>
-        <h2 class = "big-stats"><a href = "{% url 'all_artists' %}">Artists:</a> {{artists_amount}}</h2>
-    </span>
+    </div>
     <!--chart.js stuff-->
     <div class = "chart-container">
         <div class = "chart-single-container">
@@ -98,9 +131,6 @@
             options: {}
             };
     </script>
-
-
-
     <script>
         //ALBUM DECADE CHART
         const yearLabels = ["40's", "50's", "60's", "70's", "80's", "90's", "00's", "10's", "20's"]
@@ -219,7 +249,6 @@
         },
         };
     </script>
-
     <script>
         //Song length CHART 
         const lengthLabels = ["< 1", "1-2", "2-3", "3-4", "4-5","5-6","6-7", "7-8", "8-9", "9-10", "10-20", "20-30"]
