@@ -46,10 +46,10 @@
                 </div>
             </div>
         </div>
-        <div class = "row">
+        <div class = "row my-3">
             <div class = "col col-md-4 col-sm">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                       Albums By Decade
                     </div>
                     <div class="card-body">
@@ -61,7 +61,7 @@
             </div>
             <div class = "col col-md-4 col-sm">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                       Publishers By Decade
                     </div>
                     <div class="card-body">
@@ -73,7 +73,7 @@
             </div>
             <div class = "col col-md-4 col-sm">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                       Songs by Length
                     </div>
                     <div class="card-body">
@@ -84,10 +84,10 @@
                   </div>
             </div>
         </div>
-        <div class = "row">
+        <div class = "row my-3">
             <div class = "col col-md-4 col-sm">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                       Songs by Title
                     </div>
                     <div class="card-body">
@@ -99,7 +99,7 @@
             </div>
             <div class = "col col-md-4 col-sm">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                       Albums by Title
                     </div>
                     <div class="card-body">
@@ -111,7 +111,7 @@
             </div>
             <div class = "col col-md-4 col-sm">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header text-center">
                       Artists by Name
                     </div>
                     <div class="card-body">
@@ -122,14 +122,21 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <!--chart.js stuff still needs to be bootstrapped-->
-    <div class = "chart-single-container" id = "country-pi-chart-container">
-        <h2>Countries:</h2>
-        <div id = "country-pi-chart">
-            <canvas id="countryChart"></canvas>
+        <div class = "row my-3">
+            <div class = "col-md-6 mx-auto">
+                <div class="card text-center">
+                    <div class="card-header">
+                      Albums by Country
+                    </div>
+                    <div class="card-body">
+                        <div class = "mx-auto" id = "country-pi-chart" style = "width: 70%;">
+                            <canvas id="countryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
