@@ -1,26 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-        <div class = "page-title-container">
-            <h1 class = "page-title"  style = "text-align: center;">Song Details</h1>
+    <div class = "container-fluid">
+        <div class = "row bg-secondary py-3">
+            <div class = "col text-center text-dark">
+                <h1>Song Details - {{ song.title }}</h1>
+                <img class = "img-fluid my-2" style = "max-height: 25rem;" src = "{% static '/images/albums' %}/{{song.album.id}}.jpg">
+            </div>
         </div>
-        <p style="text-align: center;" >{{song.title}}</p>
-        <table class = "song-table">
-            <tr>
-                <th>Cover</th>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Album</th>
-                <th>Length</th>
-                <th>Release date</th>
-            </tr>
-            <tr>
-                <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{song.album.id}}.jpg"></td>
-                <td><a href = "{% url 'song_detail' song.id %}">{{ song.title }}</a></td> 
-                <td><a href = "{% url 'artist_detail' song.artist.id%}">{{song.artist}}</a></td>
-                <td><a href = "{% url 'albums_detail' song.album.id %}">{{song.album}}</a></td>
-                <td>{{song.length}}</td>
-                <td>{{song.album.release_date}}</td>
-            </tr>
-        </table>
+        <div class = "row d-flex py-5 bg-success">
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <div class="card-body bg-light">
+                        <h5 class="card-title">Publisher</h5>
+                        <a class  = "text-success" href = "{% url 'publisher_detail' song.album.publisher.id %}">{{song.album.publisher}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <div class="card-body bg-light">
+                        <h5 class="card-title">Released</h5>
+                        <p>{{song.album.release_date}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <div class="card-body bg-light">
+                        <h5 class="card-title">Artist</h5>
+                        <a class = "text-success" href = "{% url 'artist_detail' song.artist.id %}" >{{song.artist}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-lg-3 col-md-6 col-sm">
+                <div class="card mx-auto my-2 text-center" style="width: 18rem;">
+                    <div class="card-body bg-light">
+                        <h5 class="card-title">Length</h5>
+                        <p href = "{% url 'artist_detail' song.artist.id %}" >{{song.length}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endblock %}
