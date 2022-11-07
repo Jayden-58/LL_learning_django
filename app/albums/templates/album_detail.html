@@ -9,7 +9,7 @@
                 <img class = "img-fluid my-2" style = "max-height: 25rem;" src = "{% static '/images/albums' %}/{{album.id}}.jpg">
             </div>
         </div>
-        <div class = "row d-flex my-5">
+        <div class = "row d-flex py-5 bg-success">
             <div class = "col-lg-4 col-md-6 col-sm">
                 <div class="card mx-auto my-2 text-center" style="width: 18rem;">
                     <div class="card-body bg-light">
@@ -39,10 +39,12 @@
     </div>
         <div class = "song-table-w-h2">
             <table class = "table">
-                        <tr>
-                            <th>Song</th>
-                            <th>Length</th>
-                        </tr>
+                        <thead class = "bg-dark text-success">
+                            <tr>
+                                <th>Song</th>
+                                <th>Length</th>
+                            </tr>
+                        </thead>
                 {% for song in songs %}
                     {% if album.id == song.album.id %}
                         <tr>

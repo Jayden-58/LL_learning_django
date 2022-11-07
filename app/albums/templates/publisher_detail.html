@@ -1,31 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-        <div class = "page-title-container">
-            <h1 class = "page-title" style = "text-align: center;">Publisher Details</h1>
+    <div class = "container-fluid">
+        <div class = "row bg-secondary py-3">
+            <div class = "col text-center text-dark">
+                <h1>Publisher details - {{publisher.name}}</h1>
+                <img class = "img-fluid my-2" style = "max-height: 25rem;" src = "{% static '\images\homepage\alexey-ruban-73o_FzZ5x-w-unsplash.jpg' %}">
+            </div>
         </div>
-        <p style = "text-align: center;">{{publisher.name}}</p>
-        <h2 style = "text-align: center;">Albums: </h2>
-        <table class = "album-table">
-            <tr>
-                <th>Cover</th>
-                <th>Album</th>
-                <th>Artist</th>
-                <th>Released</th>
-            </tr>
+    </div>
+        <table class = "table">
+            <thead class = "bg-dark text-success">
+                <tr>
+                    <th>Cover</th>
+                    <th>Album</th>
+                    <th>Artist</th>
+                    <th>Released</th>
+                </tr>
+            </thead>
             {% for album in albums %}
                     
                 {% if publisher.id == album.publisher.id %}
                 <tr>                  
                     <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg"></td>
-                    <td><a href = "{% url 'albums_detail' album.id%}">{{album.title}}</a></td>
-                    <td><a href = "{% url 'artist_detail' album.artist.id%}">{{album.artist}}</a></td>
+                    <td><a class = "text-success" href = "{% url 'albums_detail' album.id%}">{{album.title}}</a></td>
+                    <td><a class = "text-success" href = "{% url 'artist_detail' album.artist.id%}">{{album.artist}}</a></td>
                     <td>{{album.release_date}}</td>
                     </tr>
                 {% endif %}
             {% endfor %}       
         </table>
-        
+        <!--
         <h2 style = "text-align: center;">Songs</h2>
         <table class = "song-table">
             <tr>
@@ -49,4 +54,5 @@
                 {% endif %}
             {% endfor %}
     </table>
+-->
     {% endblock %}
