@@ -5,23 +5,27 @@
             <h1 class = "page-title" style = "text-align: center;">All Albums</h1>
         </div>
        <!-- <h2 style = "text-align: center;">Data Input Progress: {{albums_length}} / 231 Albums</h2> -->
-        <table class = "album-table table">
-                <tr>
-                    <th>Cover</th>
-                    <th>Title</th>
-                    <th>Artist</th>
-                    <th>Release Date</th>
-                    <th>Publisher</th>
-                </tr>
+        <table class = "table table-hover">
+                <thead class = "bg-dark text-success">
+                    <tr>
+                        <th scope = "col">Cover</th>
+                        <th scope = "col">Title</th>
+                        <th scope = "col">Artist</th>
+                        <th scope = "col">Release Date</th>
+                        <th scope = "col">Publisher</th>
+                    </tr>
+                </thead>
             {% for album in albums %}
-                <tr>
-                    <!--<td><img src = "{% static 'images/1.jpg' %}"></td>-->
-                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg"></td>
-                    <td><a href = "{% url 'albums_detail' album.id %}">{{album.title}}</a></td>
-                    <td><a href = "{% url 'artist_detail' album.artist.id %}">{{album.artist}}</a></td> 
-                    <td>{{album.release_date}}</td> 
-                    <td><a href = " {%url 'publisher_detail' album.publisher.id%}">{{album.publisher}}</a></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <!--<td><img src = "{% static 'images/1.jpg' %}"></td>-->
+                        <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg"></td>
+                        <td><a class = "text-success" href = "{% url 'albums_detail' album.id %}">{{album.title}}</a></td>
+                        <td><a class = "text-success" href = "{% url 'artist_detail' album.artist.id %}">{{album.artist}}</a></td> 
+                        <td>{{album.release_date}}</td> 
+                        <td><a class = "text-success" href = " {%url 'publisher_detail' album.publisher.id%}">{{album.publisher}}</a></td>
+                    </tr>
+                </tbody>
             {% endfor %}
         </table>
     {% endblock %}
