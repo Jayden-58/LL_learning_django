@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
     {% block content %}
-        <div class = "page-title-container">
-            <h1 class = "page-title"  style = "text-align: center;">All Songs</h1>
+    <div class = "container-fluid">
+        <div class = "row bg-secondary py-3">
+            <div class = "col text-center text-dark">
+                <h1>All Songs</h1>
+                <img class = "img-fluid my-2" style = "max-height: 25rem;" src = "{% static '\images\homepage\vinyl_player_background_image.jpg' %}">
+            </div>
         </div>
+    </div>
         <table class = "table table-hover">
             <thead class="bg-dark text-success">
                 <tr>
