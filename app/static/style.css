@@ -48,7 +48,7 @@ a:visited {
 .header-links:hover {
     text-decoration: underline;
 }
-
+/*
 table,
 th,
 td {
@@ -63,6 +63,7 @@ th {
 table {
     width: 100%;
 }
+*/
 
 .homepage-button {
     background-image: radial-gradient(rgb(93, 215, 99), rgb(2, 247, 2));
