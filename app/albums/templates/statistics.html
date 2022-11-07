@@ -46,47 +46,85 @@
                 </div>
             </div>
         </div>
+        <div class = "row">
+            <div class = "col col-md-4 col-sm">
+                <div class="card">
+                    <div class="card-header">
+                      Albums By Decade
+                    </div>
+                    <div class="card-body">
+                        <div id = "date-bar-chart" style = "width:100%;">
+                            <canvas id="dateChart"></canvas>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class = "col col-md-4 col-sm">
+                <div class="card">
+                    <div class="card-header">
+                      Publishers By Decade
+                    </div>
+                    <div class="card-body">
+                        <div id = "date-bar-chart" style = "width: 100%;">
+                            <canvas id="publisherDateChart"></canvas>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class = "col col-md-4 col-sm">
+                <div class="card">
+                    <div class="card-header">
+                      Songs by Length
+                    </div>
+                    <div class="card-body">
+                        <div id = "length-bar-chart" style = "width: 100%;">
+                            <canvas id="songLengthChart"></canvas>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col col-md-4 col-sm">
+                <div class="card">
+                    <div class="card-header">
+                      Songs by Title
+                    </div>
+                    <div class="card-body">
+                        <div id = "song-alphabet-chart" style = "width: 100%;">
+                            <canvas id="songAlphabetChart"></canvas>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class = "col col-md-4 col-sm">
+                <div class="card">
+                    <div class="card-header">
+                      Albums by Title
+                    </div>
+                    <div class="card-body">
+                        <div id = "album-alphabet-chart" style = "width: 100%;">
+                            <canvas id="albumAlphabetChart"></canvas>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class = "col col-md-4 col-sm">
+                <div class="card">
+                    <div class="card-header">
+                      Artists by Name
+                    </div>
+                    <div class="card-body">
+                        <div id = "artist-alphabet-chart" style = "width: 100%;">
+                            <canvas id="artistAlphabetChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
-    <!--chart.js stuff-->
-    <div class = "chart-container">
-        <div class = "chart-single-container">
-            <h2>Album Decades:</h2>
-            <div id = "date-bar-chart">
-                <canvas id="dateChart"></canvas>
-            </div>
-        </div>
-        <div class = "chart-single-container">
-            <h2>Publisher Decades:</h2>
-            <div id = "date-bar-chart">
-                <canvas id="publisherDateChart"></canvas>
-            </div>
-        </div>
-        <div class = "chart-single-container">
-            <h2>Song Lengths:</h2>
-            <div id = "length-bar-chart">
-                <canvas id="songLengthChart"></canvas>
-            </div>
-        </div>
-        <div class = "chart-single-container">
-            <h2>Song Titles:</h2>
-            <div id = "song-alphabet-chart">
-                <canvas id="songAlphabetChart"></canvas>
-            </div>
-        </div>
-        <div class = "chart-single-container">
-            <h2>Album Titles:</h2>
-            <div id = "album-alphabet-chart">
-                <canvas id="albumAlphabetChart"></canvas>
-            </div>
-        </div>
-        <div class = "chart-single-container">
-            <h2>Artist Name:</h2>
-            <div id = "artist-alphabet-chart">
-                <canvas id="artistAlphabetChart"></canvas>
-            </div>
-        </div>
-    </div>
+    <!--chart.js stuff still needs to be bootstrapped-->
     <div class = "chart-single-container" id = "country-pi-chart-container">
         <h2>Countries:</h2>
         <div id = "country-pi-chart">
