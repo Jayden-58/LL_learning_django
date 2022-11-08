@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block content %}
+        {% if searched %}
+            <h1>You searched for {{searched}}</h1>
+        {% else %}
+            <h1>no search</h1>
+        {% endif %}
+        <table class = "table table-hover">
+            <thead class = "bg-dark text-success">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date Founded</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for publisher in publisher_results %}
+                <tr>
+                    <td><a class = "text-success"href = "{% url 'publisher_detail' publisher.id%}">{{publisher.name}}</a></td>
+                    <td>{{publisher.date_founded}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class = "table table-hover">
+            <thead class = "bg-dark text-success">
+                <tr>
+                    <th scope = "col">Picture</th>
+                    <th scope = "col">Artists</th>
+                </tr>
+            </thead>
+            {% for artist in artist_results %}
+                <tr>
+                    <td><img class= "artist-image" style = "width: 100px; height: auto;" src = "{% static '/images/artists' %}/{{artist.id}}.jpg"></td>
+                    <td><a class = "text-success" href = "{% url 'artist_detail' artist.id %}">{{artist.first_name}} {{artist.last_name}}</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <table class = "table table-hover">
+            <thead class = "bg-dark text-success">
+                <tr>
+                    <th scope = "col">Cover</th>
+                    <th scope = "col">Title</th>
+                    <th scope = "col">Artist</th>
+                    <th scope = "col">Release Date</th>
+                    <th scope = "col">Publisher</th>
+                </tr>
+            </thead>
+        {% for album in album_results %}
+            <tbody>
+                <tr>
+                    <!--<td><img src = "{% static 'images/1.jpg' %}"></td>-->
+                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{album.id}}.jpg"></td>
+                    <td><a class = "text-success" href = "{% url 'albums_detail' album.id %}">{{album.title}}</a></td>
+                    <td><a class = "text-success" href = "{% url 'artist_detail' album.artist.id %}">{{album.artist}}</a></td> 
+                    <td>{{album.release_date}}</td> 
+                    <td><a class = "text-success" href = " {%url 'publisher_detail' album.publisher.id%}">{{album.publisher}}</a></td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+    <table class = "table table-hover">
+        <thead class="bg-dark text-success">
+            <tr>
+                <th scope="col">Cover</th>
+                <th scope="col">Title</th>
+                <th scope="col">Artist</th>
+                <th scope="col">Album</th>
+                <th scope="col">Length</th>
+                <th scope="col">Release date</th>
+            </tr>
+        </thead>
+        {% for song in song_results %}
+            <tbody>
+                <tr>
+                    <td><img class= "album-image" style = "width: 100px; height: auto;" src = "{% static '/images/albums' %}/{{song.album.id}}.jpg"></td>
+                    <td><a class = "text-success" href = "{% url 'song_detail' song.id %}">{{ song.title }}</a></td> 
+                    <td><a class = "text-success" href = "{% url 'artist_detail' song.artist.id%}">{{song.artist}}</a></td>
+                    <td><a class = "text-success" href = "{% url 'albums_detail' song.album.id %}">{{song.album}}</a></td>
+                    <td>{{song.length}}</td>
+                    <td>{{song.album.release_date}}</td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+    {% endblock %}

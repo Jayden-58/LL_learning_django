@@ -385,4 +385,27 @@ def statistics(request):
         'artists_z': artists_z
 
 
+       
+
+
 })
+
+def search_results(request):
+    if request.method == "POST":
+        searched = request.POST.get('searched')
+        publisher_results = Publisher.objects.filter(name__contains=searched)
+        artist_results = Artist.objects.filter(first_name__contains=searched)
+        album_results = Album.objects.filter(title__contains=searched)
+        song_results = Song.objects.filter(title__contains=searched)
+        return render(request, 'search_results.html', {
+            'searched': searched,
+            'publisher_results': publisher_results,
+            'artist_results': artist_results,
+            'album_results': album_results,
+            'song_results': song_results
+        
+        })
+    else:
+        return render(request, 'search_results.html', 
+        {})
+            
