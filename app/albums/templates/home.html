@@ -51,9 +51,9 @@
             </div>
             <div class = "row mt-5 py-5 bg-success">
                 <div class = "col-lg-6">
-                    <div class="card border-dark bg-dark mx-auto my-2" style = "width: 30rem;">
+                    <div class="card border-dark mx-auto my-2" style = "width: 35rem; height: 32rem;">
                         <img src="{% static '\images\homepage\mink-mingle-HRyjETL87Gg-unsplash.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body bg-dark">
+                        <div class="card-body bg-dark md-3 ">
                             <h5 class="card-title text-light">Random Record</h5>
                             <p class="card-text text-light">Check out a randomly selected album in Jayden's record collection.</p>
                             <a href="{% url 'random_album_detail' %}" class="btn btn-outline-success">Random Record</a>
@@ -61,24 +61,18 @@
                     </div>
                 </div>
                 <div class = "col-lg-6">
-                    <div class="card border-dark bg-dark mx-auto my-2" style = "width: 30rem;">
+                    <div class="card border-dark mx-auto my-2" style = "width: 35rem; height: 32rem;">
                         <img src="{% static '\images\homepage\ivan-jermakov-N1I6IgDOGJs-unsplash.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body bg-dark">
+                        <div class="card-body bg-dark md-3">
                             <h5 class="card-title text-light">Statistics</h5>
                             <p class="card-text text-light">Check out statistics and charts using data from Jayden's record collection.</p>
-                            <a href="{% url 'random_album_detail' %}" class="btn btn-outline-success">Statistics</a>
+                            <a href="{% url 'statistics' %}" class="btn btn-outline-success">Statistics</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class = "row d-flex my-5">
-                <div class = "col text-center">
-                    <h1>About This Site</h1>
-                    <h2>Insert here..</h2>
-                </div>
                 
             </div>
             
-        </div>
         
     {% endblock %}
