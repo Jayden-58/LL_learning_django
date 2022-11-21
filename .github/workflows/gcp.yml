@@ -13,7 +13,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      working-directory: ./app
 
     - uses: google-github-actions/setup-gcloud@main
       with:
@@ -21,19 +20,19 @@ jobs:
         project_id: ${{ env.PROJECT_ID }}
         export_default_credentials: true
 
-    - name: CD APP
-      run: cd app
-
     - name: Build Docker Image
+      run: cd app
       run: docker build -t $IMAGE_NAME:latest .
 
     - name: Configure Docker Client
+      run: cd app
       run: |-
         gcloud auth configure-docker --quiet
 
     - name: Push Docker Image To Congtainer Registry (GCR)
       env:
         GIT_TAG: v0.1.0
+      run: cd app
       run: |-
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
