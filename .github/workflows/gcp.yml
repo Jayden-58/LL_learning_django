@@ -21,19 +21,20 @@ jobs:
         export_default_credentials: true
 
     - name: Build Docker Image
-      run: cd app
-      run: docker build -t $IMAGE_NAME:latest .
+      run: |-
+      cd app
+      docker build -t $IMAGE_NAME:latest .
 
     - name: Configure Docker Client
-      run: cd app
       run: |-
+        cd app
         gcloud auth configure-docker --quiet
 
     - name: Push Docker Image To Congtainer Registry (GCR)
       env:
         GIT_TAG: v0.1.0
-      run: cd app
       run: |-
+        cd app
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
         docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
         docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
