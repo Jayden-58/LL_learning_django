@@ -22,8 +22,8 @@ jobs:
 
     - name: Build Docker Image
       run: |-
-      cd app
-      docker build -t $IMAGE_NAME:latest .
+        cd app
+        docker build -t $IMAGE_NAME:latest .
 
     - name: Configure Docker Client
       run: |-
