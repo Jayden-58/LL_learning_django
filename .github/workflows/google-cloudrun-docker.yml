@@ -49,37 +49,37 @@ on:
     branches: [ "main" ]
 
 env:
-  PROJECT_ID: YOUR_PROJECT_ID # TODO: update Google Cloud project id
-  GAR_LOCATION: YOUR_GAR_LOCATION # TODO: update Artifact Registry location
-  SERVICE: YOUR_SERVICE_NAME # TODO: update Cloud Run service name
-  REGION: YOUR_SERVICE_REGION # TODO: update Cloud Run service region
+  PROJECT_ID: jaydens-record-database # TODO: update Google Cloud project id *CHECK*
+  GAR_LOCATION: us-west2 # TODO: update Artifact Registry location *CHECK*
+  SERVICE: record-database # TODO: update Cloud Run service name *CHECK*
+  REGION: us-central1 # TODO: update Cloud Run service region *CHECK*
 
 jobs:
   deploy:
-    # Add 'id-token' with the intended permissions for workload identity federation
-    permissions:
-      contents: 'read'
-      id-token: 'write'
+    # # Add 'id-token' with the intended permissions for workload identity federation
+    # permissions:
+    #   contents: 'read'
+    #   id-token: 'write'
 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - name: Checkout
+    #     uses: actions/checkout@v2
 
+    #   - name: Google Auth
+    #     id: auth
+    #     uses: 'google-github-actions/auth@v0'
+    #     with:
+    #       token_format: 'access_token'
+    #       workload_identity_provider: '${{ secrets.WIF_PROVIDER }}' # e.g. - projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider
+    #       service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}' # e.g. - my-service-account@my-project.iam.gserviceaccount.com
+
+      # NOTE: Alternative option - authentication via credentials json
       - name: Google Auth
         id: auth
         uses: 'google-github-actions/auth@v0'
         with:
-          token_format: 'access_token'
-          workload_identity_provider: '${{ secrets.WIF_PROVIDER }}' # e.g. - projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider
-          service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}' # e.g. - my-service-account@my-project.iam.gserviceaccount.com
-
-      # NOTE: Alternative option - authentication via credentials json
-      # - name: Google Auth
-      #   id: auth
-      #   uses: 'google-github-actions/auth@v0'
-      #   with:
-      #     credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY }}''
+          credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY }}''
 
       # BEGIN - Docker auth and build (NOTE: If you already have a container image, these Docker steps can be omitted)
 
