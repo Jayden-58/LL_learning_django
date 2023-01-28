@@ -1,6 +1,7 @@
 from platform import release
 from django.shortcuts import render
 from django.http import HttpResponse, Http404, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from .models import Album, Publisher, Artist, Song
 import random
 # Create your views here.
@@ -389,7 +390,7 @@ def statistics(request):
 
 
 })
-
+@csrf_exempt
 def search_results(request):
     if request.method == "POST":
         searched = request.POST.get('searched')
