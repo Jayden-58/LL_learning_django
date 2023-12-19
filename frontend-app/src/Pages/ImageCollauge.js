@@ -21,20 +21,23 @@ function shuffle(array) {
 const ImageCollauge = () => {
     shuffle(itemData)
     return (
-        <Box sx={{px: 2, p: 0, height: '100vh', overflow: 'hidden', opacity: .8, backgroundImage: 'linear-gradient(to right, #f2709c, #ff9472)'}}>
-            <ImageList variant="masonry" cols={10} sx={{m:0}}>
-                {itemData.map((item) => (
-                    <ImageListItem key={item.img} sx={{maxWidth: '190px', minWidth: '10px', top: '-30px', border: '4px solid #999999', borderRadius: 4}}>
-                        <img
-                            src={item.img}
-                            alt={item.title}
-                            loading="lazy"
-                            style={{borderRadius: 6}}
-                        />
-                    </ImageListItem>
-                ))}
-            </ImageList>
-        </Box>
+<Box sx={{position: 'relative', height: '100vh'}}>
+  <Box sx={{position: 'absolute', top: 0, left: 0, width: '100%', opacity: .95, height: '100%',  backgroundImage: 'linear-gradient(to right, #0f2027, #203a43, #2c5364)', zIndex: 2}}></Box>
+  <Box sx={{position: 'relative', px: 2, p: 0, height: '100vh', overflow: 'hidden', backgroundImage: 'linear-gradient(to right, #0f2027, #203a43, #2c5364)', zIndex: 1}}>
+    <ImageList variant="masonry" cols={10} sx={{m:0}}>
+      {itemData.map((item) => (
+        <ImageListItem key={item.img} sx={{maxWidth: '190px', minWidth: '40px', top: '-30px', borderRadius: 4}}>
+          <img
+            src={item.img}
+            alt={item.title}
+            loading="lazy"
+            style={{borderRadius: 6}}
+          />
+        </ImageListItem>
+      ))}
+    </ImageList>
+  </Box>
+</Box>
     )
 }
 

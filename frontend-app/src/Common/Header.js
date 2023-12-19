@@ -72,7 +72,7 @@ function Header() {
 
 
     return (
-        <AppBar position="absolute" sx={{zIndex: 2}}>
+        <AppBar position="absolute" sx={{zIndex: 100}}>
             <Container maxWidth="xxxl">
                 <Toolbar disableGutters>
                     <AlbumIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
