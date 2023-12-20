@@ -1,18 +1,27 @@
-import {Box, Typography} from "@mui/material"
+import React from "react"
+import {Box} from "@mui/material"
 import Header from "../Common/Header"
-import ImageCollauge from "./ImageCollauge"
-import LoadingSpinner from "../Common/LoadingSpinner"
-import LoadingPage from "./LoadingPage"
+import SimpleAPIFetch from "../Common/SimpleAPIFetch";
+import Sidebar from "../Common/Sidebar";
+// import ImageCollauge from "../Common/ImageCollauge"
+// import LoadingSpinner from "../Common/LoadingSpinner"
+// import LoadingPage from "./LoadingPage"
+
 
 const HomePage = () => {
+    const [open, setOpen] = React.useState(false)
     return (
         <Box>
-            <Header />
-            <ImageCollauge />
-            {/* <LoadingSpinner /> */}
-            <LoadingPage />
-        </Box>
-    )
-}
-
-export default HomePage
+        <Header setOpen={setOpen} />
+        {/* <ImageCollauge /> */}
+        {/* <LoadingSpinner /> */}
+        {/* <LoadingPage /> */}
+        <p>hidden (delete later)</p>
+        <p>hidden (delete later)</p>
+        <SimpleAPIFetch />
+        <Sidebar open={open} setOpen={setOpen}/>
+    </Box>
+    );
+  };
+  
+  export default HomePage;

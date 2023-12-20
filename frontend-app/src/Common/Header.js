@@ -59,12 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const pages = ['Albums', 'Artists', 'Songs', 'Publishers', 'Random Album', 'Statistics'];
 
-function Header() {
+function Header({setOpen}) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
@@ -72,7 +68,7 @@ function Header() {
 
 
     return (
-        <AppBar position="absolute" sx={{zIndex: 100}}>
+        <AppBar > {/*position="absolute" sx={{zIndex: 100}}*/}
             <Container maxWidth="xxxl">
                 <Toolbar disableGutters>
                     <AlbumIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -100,36 +96,11 @@ function Header() {
                             aria-label="account of current user"
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
+                            onClick={() => setOpen(true)}
                             color="inherit"
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                        
                     </Box>
                     <AlbumIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
