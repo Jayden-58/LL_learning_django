@@ -4,12 +4,10 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { styled, alpha } from '@mui/material/styles';
-import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
 import { InputBase} from '@mui/material';
 import AlbumIcon from '@mui/icons-material/Album';
@@ -60,11 +58,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const pages = ['Albums', 'Artists', 'Songs', 'Publishers', 'Random Album', 'Statistics'];
 
 function Header({setOpen}) {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    // const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+    // const handleCloseNavMenu = () => {
+    //     setAnchorElNav(null);
+    // };
 
 
     return (
@@ -124,7 +122,7 @@ function Header({setOpen}) {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                               // onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}

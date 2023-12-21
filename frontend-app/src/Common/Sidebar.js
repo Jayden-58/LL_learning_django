@@ -6,50 +6,75 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { IconButton } from '@mui/material';
+import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
+import HomeIcon from '@mui/icons-material/Home';
+import AlbumIcon from '@mui/icons-material/Album';
+import PersonIcon from '@mui/icons-material/Person';
+import PublicIcon from '@mui/icons-material/Public';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import InfoIcon from '@mui/icons-material/Info';
 
-export default function Sidebar({open, setOpen}) {
+export default function Sidebar({ open, setOpen }) {
 
-  const toggleDrawer = () => (event) => {
-    setOpen(false)
+    const toggleDrawer = () => (event) => {
+        setOpen(false)
 
-  };
+    };
 
-  //change this later
-  const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['Albums', 'Artists', 'Publishers', 'Statistics', 'Random Album'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+    const links = {
+        "link1": { "name": "Home", "icon": <HomeIcon /> },
+        "link2": { "name": "Albums", "icon": <AlbumIcon /> },
+        "link3": { "name": "Artists", "icon": <PersonIcon /> },
+        "link4": { "name": "Publishers", "icon": <PublicIcon /> },
+        "link5": { "name": "Statistics", "icon": <BarChartIcon /> },
+        "link6": { "name": "Random Album", "icon": <QuestionMarkIcon /> },
+        "link7": { "name": "About", "icon": <InfoIcon /> }
+    };
 
-  return (
-    <div>
-        <React.Fragment>
-          <Drawer
-            anchor={'left'}
-            open={open}
-            onClose={toggleDrawer}
-          >
-            {list('left')}
-          </Drawer>
-        </React.Fragment>
-    </div>
-  );
+
+    //change this later
+    const list = (anchor) => (
+        <Box
+            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+            role="presentation"
+            onClick={toggleDrawer()}
+            onKeyDown={toggleDrawer()}
+        >
+            <Box sx={{ display: 'flex', justifyContent: 'end', }}>
+                <IconButton>
+                    <ArrowBackIosRoundedIcon
+                        onClick={toggleDrawer()}
+                    />
+                </IconButton>
+            </Box>
+            <List>
+                {Object.entries(links).map(([key, link]) => (
+                    <ListItem key={key} disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                {link.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={link.name} />
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+    );
+
+    return (
+        <div>
+            <React.Fragment>
+                <Drawer
+                    anchor={'left'}
+                    open={open}
+                    onClose={toggleDrawer()}
+                >
+                    {list('left')}
+                </Drawer>
+            </React.Fragment>
+        </div>
+    );
 }
