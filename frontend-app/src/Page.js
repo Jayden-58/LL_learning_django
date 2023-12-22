@@ -12,7 +12,7 @@ const Page = () => {
  return (
     <Box>
         <Header setOpen={setOpen} />
-        {/* <HomePage /> */}
+        <HomePage />
         <Sidebar open={open} setOpen={setOpen}/>
         <LoadingPage loading={loading} />
     </Box>

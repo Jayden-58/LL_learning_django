@@ -6,7 +6,7 @@ const SimpleAPIFetch = () => {
   
     React.useEffect(() => {
       const fetchData = async () => {
-        const url = 'http://localhost:8090/api/message';
+        const url = 'http://localhost:8090/api/first-album';
   
         try {
           const response = await fetch(url);
@@ -16,19 +16,18 @@ const SimpleAPIFetch = () => {
           }
   
           const data = await response.json();
-          const textValue = data.text;
-          setMessage(textValue);
+          setMessage(data);
         } catch (error) {
           console.error('Fetch error:', error);
         }
       };
   
-      fetchData(); // Call the asynchronous function inside useEffect
-    }, []); // Empty dependency array to run only once on component mount
+      fetchData();
+    }, []); 
   
 
     return (
-        <p>{`${message}`}</p>
+        <p>{`${message.Title}`}</p>
     )
 }
 
