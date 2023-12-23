@@ -12,7 +12,7 @@ var DB *gorm.DB
 // Init initializes the database connection
 func Init() {
 	var err error
-	DB, err = gorm.Open(sqlite.Open("/Users/jaydenkellar/Documents/GitHub/LL_learning_django/backend-app(Legacy)/db.sqlite3"), &gorm.Config{})
+	DB, err = gorm.Open(sqlite.Open("/Users/jaydenkellar/Documents/GitHub/LL_learning_django/backend-app/db.sqlite3"), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}
